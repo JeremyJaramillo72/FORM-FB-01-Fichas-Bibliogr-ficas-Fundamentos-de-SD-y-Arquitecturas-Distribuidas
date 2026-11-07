@@ -43,7 +43,6 @@
 \noindent
 \begin{tabular}{@{}ll@{}}
     \textbf{Estudiante:} & Luis Alberto Paca Pilataza \\
-    \textbf{Cédula de Identidad:} & 1251252225 \\
     \textbf{Correo Institucional:} & \texttt{lpacap@uteq.edu.ec} \\
     \textbf{Asignatura:} & Aplicaciones Distribuidas - 7mo Nivel, Paralelo ``A'' \\
     \textbf{Periodo Académico:} & Noviembre 2026 \\
@@ -107,8 +106,7 @@ Los autores investigan la falta de estandarización en las técnicas de identifi
 El estudio de Oumoussa y Saidi me alertó sobre los riesgos de evaluar la calidad de los microservicios únicamente mediante métricas tradicionales de orientación a objetos (cohesión y acoplamiento sintáctico), sin considerar la sobrecarga inducida en la red distribuida. En el informe \textbf{TA-IND-01}, incorporaré estas conclusiones en la sección de \textit{``Evaluación de Fronteras de Servicio y Deuda Técnica''}, evaluando críticamente las compensaciones entre granularidad fina y el incremento de llamadas inter-servicio en el diseño de la arquitectura.
 
 \vspace{4mm}
-\hrule
-\vspace{5mm}
+\newpage
 
 \subsection*{Ficha Bibliográfica N$^\circ$ 3: Diagnóstico Robusto de Fallas con Datos Multimodales}
 
@@ -148,7 +146,7 @@ Este artículo transformó mi comprensión práctica sobre la observabilidad dis
 \noindent\textbf{Resumen Técnico Contextualizado (102 palabras):}\\
 El trabajo plantea que la partición de sistemas monolíticos debe responder a los flujos organizacionales y no solo a la sintaxis del código fuente. Los autores formulan un método de identificación sustentado en modelos de procesos de negocio (BPMN) que extrae dependencias de control, intercambio de datos y proximidad semántica respaldada por ontologías OWL. Mediante un algoritmo de agrupamiento jerárquico aglomerativo colaborativo (cHAC), la metodología particiona las actividades empresariales en servicios autónomos. Los experimentos en el sistema de bicicletas compartidas Bicing evidenciaron una reducción notable del acoplamiento inter-servicios y un incremento en la cohesión relacional frente a técnicas de clustering tradicionales.
 
-\vspace{2mm}
+\newpage
 \noindent\textbf{Dato Concreto y Verificable:}\\
 \textbf{Sección 4.4, págs. 19--21 (Fig. 8, Fig. 9, Tabla 13):} En la evaluación experimental sobre el caso real \textit{Bicing}, la integración conjunta de dependencias de control, datos y semántica fragment-driven logró minimizar el acoplamiento aferente (AC) y eferente (EC) a valores cercanos a cero en módulos críticos como \textit{RequestHandling} (AC=1, EC=2, Cohesión Relacional RC=0.88), superando holgadamente a los esquemas basados únicamente en dependencias sintácticas.
 
@@ -182,7 +180,7 @@ El libro examina los dilemas críticos que emergen al abandonar los monolitos en
 Esta obra me proporcionó una mentalidad crítica fundamental: en la ingeniería de software distribuida nunca existen ``mejores prácticas'' absolutas, sino únicamente compensaciones entre atributos de calidad. Entendí con precisión que si dos microservicios comparten una misma base de datos relacional, pertenecen fácticamente al mismo quantum arquitectónico y pierden su independencia de despliegue. En \textbf{TA-IND-01}, este libro será el pilar rector de la sección \textit{``Análisis Crítico de Compensaciones (Trade-Offs), Transacciones Distribuidas y Descomposición de Datos''}.
 
 \vspace{5mm}
-\hrule
+
 \vspace{6mm}
 
 \section*{2. Declaración de Uso de Inteligencia Artificial}
@@ -196,11 +194,11 @@ En cumplimiento de las políticas académicas y éticas de la asignatura Aplicac
 \end{itemize}
 
 \vspace{5mm}
-\hrule
+
 \newpage
 
 \section*{3. Referencias Bibliográficas (Estándar IEEE)}
-Las siguientes referencias fueron generadas mediante \texttt{biblatex} con el estilo formal \texttt{ieee} a partir del archivo \texttt{Referencias.bib}:
+Las siguientes referencias fueron generadas mediante biblatex con el estilo formal ieee a partir del archivo Referencias.bib:
 
 \printbibliography[heading=none]
 

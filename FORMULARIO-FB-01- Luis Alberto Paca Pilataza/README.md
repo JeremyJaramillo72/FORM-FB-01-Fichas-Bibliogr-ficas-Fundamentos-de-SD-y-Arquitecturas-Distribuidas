@@ -1,16 +1,11 @@
 # FORM-FB-01 — Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas
 
-[![Materia](https://img.shields.io/badge/Materia-Aplicaciones%20Distribuidas%20(SOF--I--R)-007acc.svg)](#)
-[![Nivel](https://img.shields.io/badge/Nivel-7mo%20Nivel%20--%20Paralelo%20A-brightgreen.svg)](#)
-[![Carácter](https://img.shields.io/badge/Car%C3%A1cter-Formativa%20(FORM--FB--01)-orange.svg)](#)
-[![Compilación](https://img.shields.io/badge/LaTeX-BibLaTeX%20%7C%20IEEE-blue.svg)](#)
-
 ---
 
-## 📌 Datos Informativos de la Actividad
+## Datos Informativos de la Actividad
 
 - **Institución:** Universidad Técnica Estatal de Quevedo (UTEQ)
-- **Facultad:** Facultad de Ciencias de la Ingeniería / Ciencias de la Computación
+- **Facultad:** Facultad de Ciencias de la Computación
 - **Carrera:** Ingeniería de Software
 - **Asignatura:** Aplicaciones Distribuidas (SOF-I-R)
 - **Nivel / Paralelo:** 7mo Nivel — Paralelo "A"
@@ -23,7 +18,7 @@
 
 ---
 
-## 📂 Estructura de la Carpeta Individual
+## Estructura de la Carpeta Individual
 
 ```text
 FORMULARIO-FB-01- Luis Alberto Paca Pilataza/
@@ -31,8 +26,6 @@ FORMULARIO-FB-01- Luis Alberto Paca Pilataza/
 ├── main.tex                                    # Documento principal en LaTeX con las 5 fichas y bibliografía
 ├── Referencias.bib                             # Archivo de citas BibLaTeX en estándar IEEE
 ├── main.pdf                                    # Documento compilado final en formato PDF
-├── Entrega_SGA_Luis_Alberto_Paca.tex           # Fuente LaTeX de la carátula de 1 sola página para el SGA
-├── Entrega_SGA_Luis_Alberto_Paca.pdf           # PDF de 1 página listo para subir al SGA
 ├── README.md                                   # Documentación completa y manual de compilación
 │
 ├── Referencias PDF/                            # Artículos y libros fuente originales íntegros
@@ -52,27 +45,26 @@ FORMULARIO-FB-01- Luis Alberto Paca Pilataza/
 
 ---
 
-## 🛠️ Instrucciones de Compilación del Documento LaTeX
+## Instrucciones de Compilación del Documento LaTeX
 
-El documento principal (`main.tex`) está configurado con **BibLaTeX** y el motor de bibliografía **Biber** utilizando la norma **IEEE**. Puede ser compilado localmente en cualquier entorno LaTeX estándar o mediante motores modernos de un solo paso.
+El documento principal (`main.tex`) está configurado con **BibLaTeX** (backend BibTeX) utilizando la norma **IEEE**. Puede ser compilado localmente en cualquier entorno LaTeX estándar o mediante motores autónomos.
 
 ### 1. Dependencias y Paquetes Requeridos
 Asegúrese de contar con una distribución estándar de LaTeX (**TeX Live 2022+**, **MiKTeX 22+** o **MacTeX**):
 - `geometry`, `inputenc` (utf8), `fontenc` (T1), `babel` (spanish).
 - `lmodern`, `microtype`, `csquotes`, `amsmath`, `booktabs`.
-- `tcolorbox` (con la librería `skins` y `breakable`).
-- `biblatex` (con estilo `ieee`).
-- `hyperref`, `xcolor`, `fancyhdr`.
+- `biblatex` (con estilo `ieee` y `backend=bibtex`).
+- `hyperref`, `fancyhdr`, `xurl`.
 
 ### 2. Secuencia Clásica de Comandos (TeX Live / MiKTeX)
-Para resolver correctamente las referencias cruzadas y la bibliografía de BibLaTeX:
+Para resolver correctamente las referencias cruzadas y la bibliografía:
 
 ```bash
 # 1. Primera pasada para generar archivos auxiliares
 pdflatex main.tex
 
-# 2. Procesamiento de la bibliografía con Biber
-biber main
+# 2. Procesamiento de la bibliografía con bibtex
+bibtex main
 
 # 3. Segunda pasada para incorporar citas
 pdflatex main.tex
@@ -87,22 +79,14 @@ latexmk -pdf main.tex
 ```
 
 ### 3. Compilación Rápida con Tectonic (Motor Rust Autónomo)
-Tectonic resuelve automáticamente las pasadas de compilación y descarga paquetes faltantes sin intervención manual:
+Tectonic resuelve automáticamente las pasadas de compilación y referencias sin intervención manual:
 ```bash
 tectonic main.tex
 ```
 
-### 4. Compilación del Documento SGA (Hoja Única de Entrega)
-Para generar el archivo de una página requerido por la plataforma institucional LMS SGA:
-```bash
-pdflatex Entrega_SGA_Luis_Alberto_Paca.tex
-# o bien:
-tectonic Entrega_SGA_Luis_Alberto_Paca.tex
-```
-
 ---
 
-## 📑 Sistematización de las Fichas Bibliográficas
+## Sistematización de las Fichas Bibliográficas
 
 A continuación se presentan las 5 fichas académicas desarrolladas a partir de la lectura exhaustiva y verificación directa de los documentos locales:
 
@@ -178,7 +162,7 @@ A continuación se presentan las 5 fichas académicas desarrolladas a partir de 
 
 ---
 
-## 🛡️ Declaración de Uso Ético de Inteligencia Artificial
+## Declaración de Uso Ético de Inteligencia Artificial
 
 - **Herramienta empleada:** Gemini (Google).
 - **Finalidad:** Apoyo auxiliar exclusivamente para la corrección de ortografía, puntuación (comas y tildes), estilo gramatical y revisión de sintaxis del código fuente en LaTeX (`main.tex`). En ningún momento se empleó para generar automáticamente el contenido técnico.
@@ -186,7 +170,7 @@ A continuación se presentan las 5 fichas académicas desarrolladas a partir de 
 
 ---
 
-## 👤 Información del Autor
+## Información del Autor
 **Luis Alberto Paca Pilataza**  
 Estudiante del 7mo Nivel — Paralelo "A"  
 Carrera de Ingeniería de Software  
