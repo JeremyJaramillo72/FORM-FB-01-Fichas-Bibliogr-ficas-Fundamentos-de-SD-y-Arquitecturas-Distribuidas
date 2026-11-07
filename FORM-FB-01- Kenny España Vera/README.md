@@ -16,11 +16,7 @@
 - **Nivel / Paralelo:** 7mo Nivel — Paralelo "A"
 - **Docente:** Dr. Gleiston Cicerón Guerrero Ulloa
 - **Estudiante Responsable:** Kenny Isaías España Vera
-- **Cédula de Identidad:** 1208867794
 - **Correo Institucional:** `kespanav@uteq.edu.ec`
-- **Código de Actividad:** FORM-FB-01
-- **Período Académico:** Semana 2 (2 al 8 de noviembre de 2026)
-- **Repositorio Oficial:** [Repositorio GitHub Grupal](https://github.com/JeremyJaramillo72/FORM-FB-01-Fichas-Bibliogr-ficas-Fundamentos-de-SD-y-Arquitecturas-Distribuidas)
 
 ---
 
@@ -28,12 +24,7 @@
 
 Esta actividad formativa individual prepara al estudiante para redactar el **Informe Académico Individual TA-IND-01** (*Análisis crítico de un sistema distribuido real*), correspondiente a la Semana 3. 
 
-El presente compendio sistematiza cinco fuentes científicas primarias de alto impacto (publicadas entre 2023 y 2024 en revistas y congresos internacionales indexados en Scopus Q1, Web of Science e IEEE Xplore). Como valor agregado metodológico y formal, cada ficha bibliográfica está diagramada mediante una matriz tabular técnica (tabla de lectura académica tipo Word) que incluye:
-1. Referencia formal en formato IEEE generada con `biblatex` a partir del archivo unificado `referencias.bib`.
-2. Identificador persistente verificado (DOI comprobado en IEEE Xplore y Elsevier ScienceDirect).
-3. Resumen analítico de aproximadamente 100 palabras redactado de forma crítica y contextualizada a la fuente.
-4. Dato empírico concreto (cifras, taxonomías o conclusiones) con su ubicación exacta (sección y página) y una explicación técnica contextualizada en lenguaje comprensible.
-5. Nota personal que fundamenta el aporte de la fuente a la comprensión del tema y la sección específica del informe **TA-IND-01** donde será utilizada.
+El presente compendio sistematiza cinco fuentes científicas primarias de alto impacto (publicadas entre 2023 y 2024 en revistas y congresos internacionales indexados en Scopus Q1, Web of Science e IEEE Xplore).
 
 ---
 
@@ -60,10 +51,7 @@ De acuerdo con las instrucciones de la actividad académica, a continuación se 
 
 ### 4.2. Archivo Principal
 - **Documento Principal (5 fichas en tablas tipo Word, 7 páginas):** `main.tex` (genera `main.pdf`).
-  *(Alias con nomenclatura formal del estudiante:* `FORM-FB-01_Espana_Kenny.tex` $\rightarrow$ `FORM-FB-01_Espana_Kenny.pdf`*).*
 - **Base de Datos Bibliográfica:** `referencias.bib` (archivo unificado en estándar BibLaTeX / IEEE con 5 entradas verificadas).
-- **Documento Adicional para Entrega en LMS / SGA (1 sola página):** `sga.tex` (genera `sga.pdf`).
-  *(Alias formal:* `FORM-FB-01_SGA_Espana_Kenny.tex` $\rightarrow$ `FORM-FB-01_SGA_Espana_Kenny.pdf`*).*
 
 ### 4.3. Orden de Comandos
 Para compilar el documento principal resolviendo correctamente las tablas, las citas en formato IEEE, la base bibliográfica, los enlaces y las referencias cruzadas, ejecute la siguiente secuencia estricta de 4 comandos en la terminal:
@@ -81,12 +69,6 @@ pdflatex -interaction=nonstopmode main.tex
 # Paso 4: Tercera pasada para resolver numeración definitiva, hipervínculos y total de páginas
 pdflatex -interaction=nonstopmode main.tex
 ```
-
-> **Compilación del documento de entrega en SGA (`sga.tex` de 1 página):**  
-> Dado que este documento no utiliza bibliografía externa, se compila directamente en un solo paso:
-> ```bash
-> pdflatex -interaction=nonstopmode sga.tex
-> ```
 
 ### 4.4. Dependencias (Paquetes LaTeX Requeridos)
 El documento hace uso exclusivo de paquetes estándar incluidos en cualquier instalación completa de MiKTeX o TeX Live:
@@ -114,13 +96,6 @@ FORM-FB-01- Kenny España Vera/
 ├── README.md                                          # Documentación técnica, tabla de fuentes y guía de compilación
 ├── main.tex                                           # Código fuente LaTeX principal (5 fichas en tablas tipo Word, IEEE)
 ├── main.pdf                                           # PDF compilado final del informe completo (7 páginas exactas)
-├── sga.tex                                            # Código fuente LaTeX para entrega en SGA (1 sola página)
-├── sga.pdf                                            # Documento PDF compilado para subir al SGA (1 sola página)
-├── referencias.bib                                    # Base de datos bibliográfica BibLaTeX unificada (5 entradas IEEE)
-├── FORM-FB-01_Espana_Kenny.tex                        # Alias con nomenclatura formal del documento principal
-├── FORM-FB-01_Espana_Kenny.pdf                        # PDF del alias formal
-├── FORM-FB-01_SGA_Espana_Kenny.tex                    # Alias formal para el documento SGA
-├── FORM-FB-01_SGA_Espana_Kenny.pdf                    # PDF del alias formal para el SGA
 │
 ├── Referencia (PDF)/                                  # Archivos PDF originales de las fuentes académicas
 │   ├── 2023-ICSA-DesignPatterns-Performance.pdf
