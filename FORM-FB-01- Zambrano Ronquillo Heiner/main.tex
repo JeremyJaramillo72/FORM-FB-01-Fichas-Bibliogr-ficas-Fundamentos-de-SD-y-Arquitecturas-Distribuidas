@@ -1,0 +1,243 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[top=1.8cm,bottom=1.8cm,left=2cm,right=2cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{csquotes}
+
+% Configuración BibLaTeX con estilo IEEE estricto
+\usepackage[backend=biber,style=ieee,citestyle=numeric-comp]{biblatex}
+\addbibresource{referencias.bib}
+
+% Hipervínculos estrictamente en blanco y negro (sin azul)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+\def\UrlBreaks{\do\/\do\-\do\_\do\.\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z}
+\urlstyle{tt}
+
+% Formato sobrio de títulos
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% =============================================================
+% ENCABEZADO Y DATOS INFORMATIVOS
+% =============================================================
+\begin{center}
+    {\large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[0.2em]
+    {\normalsize FACULTAD DE CIENCIAS DE LA COMPUTACIÓN / CIENCIAS DE LA INGENIERÍA}\\[0.1em]
+    {\normalsize CARRERA DE INGENIERÍA DE SOFTWARE}\\[0.25em]
+    {\bfseries ASIGNATURA: APLICACIONES DISTRIBUIDAS (SOF-I-R) --- 7MO NIVEL ``A''}\\[0.4em]
+    \rule{\textwidth}{1.2pt}\\[0.3em]
+    {\Large\bfseries ACTIVIDAD FORMATIVA: FORM-FB-01}\\[0.2em]
+    {\large\bfseries Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas}\\[0.2em]
+    {\small Actividad formativa preparatoria para el Informe Académico Individual TA-IND-01 (Semana 2)}
+    \rule{\textwidth}{1.2pt}
+\end{center}
+
+\vspace{0.2em}
+
+\section{Datos Informativos de la Actividad}
+
+\begin{table}[h!]
+\normalsize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Estudiante Responsable:} & Heiner Ariel Zambrano Ronquillo \quad (\textbf{C.I.:} 0957140346) \\
+\textbf{Correo Institucional:} & \texttt{hzambranor@uteq.edu.ec} \\
+\textbf{Docente Titular:} & Dr. Gleiston Cicerón Guerrero Ulloa \\
+\textbf{Período Académico:} & Semana 2 (2 al 8 de noviembre de 2026) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Repositorio Oficial en GitHub (URL completa):}\\[0.2em]
+{\fontsize{7.5pt}{9pt}\selectfont\url{https://github.com/JeremyJaramillo72/FORM-FB-01-Fichas-Bibliogr-ficas-Fundamentos-de-SD-y-Arquitecturas-Distribuidas}}
+
+\vspace{0.4em}
+
+% =============================================================
+% INTRODUCCIÓN Y ALCANCE
+% =============================================================
+\section{Introducción y Alcance de la Actividad Formativa}
+
+La actividad formativa individual \textbf{FORM-FB-01} constituye el paso previo obligatorio para poder entregar el Informe Académico Individual \textbf{TA-IND-01} (semana 3), en el que se analizará críticamente un sistema distribuido real. Quien no haya completado esta actividad no puede presentar ese informe.
+
+Para este compendio se buscaron, leyeron y verificaron cinco fuentes académicas publicadas entre 2021 y 2024 en revistas internacionales de alto impacto (IEEE Access, ACM Computing Surveys, Computers \& Security, Information and Software Technology y SN Computer Science). Cada ficha contiene:
+
+\begin{itemize}
+  \item La referencia completa en formato IEEE, generada con \emph{biblatex} y el backend Biber.
+  \item El identificador DOI verificado manualmente en la base de datos correspondiente.
+  \item Un resumen analítico de aproximadamente 100 palabras sobre el problema, el método y los resultados de la fuente.
+  \item Un dato concreto extraído de la fuente (cifra, definición o conclusión relevante), con la sección o página exacta donde aparece.
+  \item Una nota personal sobre cómo la fuente aporta a la comprensión del tema y en qué parte del informe TA-IND-01 se utilizará.
+\end{itemize}
+
+Al  final del documento se incluye la declaración de uso de inteligencia artificial y el listado de referencias en formato IEEE.
+
+\newpage
+
+% =============================================================
+% FICHA 1: Haindl et al. (2024)
+% =============================================================
+\section{Ficha Bibliográfica 1: Seguridad en Comunicación Inter-Servicios}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Cita:} \fullcite{haindl2024systematic}
+    \item \textbf{DOI:} \href{https://doi.org/10.1109/ACCESS.2024.3406500}{10.1109/ACCESS.2024.3406500} (Verificado en IEEE Xplore).
+\end{itemize}
+
+\subsection*{Resumen Analítico (104 palabras)}
+Al migrar a microservicios se fragmenta la lógica en múltiples procesos autónomos, lo que pulveriza el perímetro defensivo tradicional. Esta revisión sistemática examina 54 artículos seleccionados entre 2015 y 2023 bajo la metodología PRISMA, categorizando los riesgos en las llamadas remotas entre servicios. Los autores identifican cómo la falta de autenticación mutua y la confianza ciega en la red privada facilitan el movimiento lateral de atacantes. Como contraparte, analizan técnicas de protección emergentes, concluyendo que la implementación de mallas de servicios (Service Mesh con Envoy o Istio) y esquemas Zero Trust resultan indispensables para blindar el tráfico este-oeste sin sobrecargar el código de negocio.
+
+\subsection*{Dato Concreto de la Fuente}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Dato (Sección IV-B.1, pág. 83828):} El 26\% de los estudios analizados (14 de 54) concluye que la mayor amenaza en microservicios es la expansión descontrolada de la superficie de ataque y la desaparición del perímetro de red.
+    \item \textbf{Explicación real:} Al partir un sistema en muchos servicios independientes se abren decenas de puertos y APIs en la red interna. Si un atacante entra a un servicio cualquiera, puede saltar fácilmente a los demás porque por dentro no se suelen pedir credenciales en cada conexión.
+\end{itemize}
+
+\subsection*{Nota Personal (Aporte y uso en TA-IND-01)}
+Siempre pensé que con colocar un firewall y autenticación a la entrada de una aplicación ya todo estaba resuelto. Este artículo me ayudó a comprender que en arquitecturas distribuidas el tráfico interno entre componentes también es vulnerable. En el informe TA-IND-01 usaré esta referencia en la sección de Postura Crítica y en el Análisis de Modelos de Comunicación, para discutir si el sistema distribuido que analice protege sus llamadas internas o si asume una confianza ciega en su red privada.
+
+\newpage
+
+% =============================================================
+% FICHA 2: Soldani y Brogi (2022)
+% =============================================================
+\section{Ficha Bibliográfica 2: Detección de Anomalías y Análisis de Causa Raíz}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Cita:} \fullcite{soldani2022anomaly}
+    \item \textbf{DOI:} \href{https://doi.org/10.1145/3501297}{10.1145/3501297} (Verificado en ACM Digital Library).
+\end{itemize}
+
+\subsection*{Resumen Analítico (104 palabras)}
+Rastrear incidentes en aplicaciones cloud-native resulta sumamente complejo por la interdependencia asíncrona entre decenas de componentes efímeros. Los autores estructuran un catálogo cualitativo de herramientas que detectan fallas y localizan su causa raíz (RCA), analizando enfoques que procesan logs, trazas distribuidas y telemetría de rendimiento. La investigación evalúa la capacidad de estos algoritmos frente a fallas funcionales y degradaciones de latencia. Su conclusión principal resalta que los análisis aislados sobre registros locales se quedan cortos ante cambios topológicos rápidos, mientras que los métodos apoyados en trazas distribuidas y grafos de llamadas ofrecen una visión global mucho más efectiva para acotar la raíz del problema.
+
+\subsection*{Dato Concreto de la Fuente}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Dato (Sección 5 y Tabla 2, pág. 59:26):} Las herramientas que solo leen archivos de registro (logs) fallan cuando la infraestructura cambia dinámicamente; únicamente las técnicas basadas en trazas distribuidas (como MonitorRank o MicroHECL) logran ordenar los servicios sospechosos de mayor a menor probabilidad de falla (\emph{ranked services}).
+    \item \textbf{Explicación real:} En la nube los contenedores cambian de IP y se destruyen a cada rato. Un log individual solo te dice que hubo un error local, pero una traza reconstruye todo el recorrido de la petición y te apunta con exactitud qué servicio fue el que originó la falla en cadena.
+\end{itemize}
+
+\subsection*{Nota Personal (Aporte y uso en TA-IND-01)}
+No tenía del todo claro cómo los sistemas de gran escala ubican el origen de una caída cuando existen docenas de servicios interactuando simultáneamente. Este estudio me aclaró que revisar registros aislados es insuficiente y que se necesita trazabilidad distribuida. En el informe TA-IND-01 emplearé esta fuente en la sección de Análisis con los conceptos de la Unidad 1, concretamente en Tolerancia a Fallos, para evaluar cómo el sistema seleccionado detecta anomalías y aísla componentes degradados.
+
+\newpage
+
+% =============================================================
+% FICHA 3: Pereira-Vale et al. (2021)
+% =============================================================
+\section{Ficha Bibliográfica 3: Revisión Multivocal de Mecanismos de Seguridad}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Cita:} \fullcite{pereiravale2021security}
+    \item \textbf{DOI:} \href{https://doi.org/10.1016/j.cose.2021.102200}{10.1016/j.cose.2021.102200} (Verificado en Elsevier ScienceDirect).
+\end{itemize}
+
+\subsection*{Resumen Analítico (104 palabras)}
+Existe una separación palpable entre las propuestas de seguridad de la academia y las prácticas que realmente despliegan los ingenieros en producción. Para cerrar esa brecha, este estudio multivocal examina 70 fuentes seleccionadas: 36 artículos científicos y 34 documentos de literatura técnica gris (informes industriales y conferencias profesionales). Los autores clasifican los mecanismos de defensa y sus contextos de aplicación operativa. Los hallazgos revelan que el desarrollo se concentra casi con exclusividad en la autenticación y el control de accesos previos, dejando desprotegida la fase posterior a la intrusión, sin pautas estructuradas para que el sistema reaccione o se recupere ante un compromiso confirmado.
+
+\subsection*{Dato Concreto de la Fuente}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Dato (Resumen y Sección 4, pág. 102200):} El 66.7\% de las soluciones analizadas se concentra únicamente en prevenir o mitigar ataques antes de que ocurran, pero un 0\% ofrece mecanismos automáticos para que el sistema reaccione y se recupere después de que un ataque tuvo éxito.
+    \item \textbf{Explicación real:} Casi todo el dinero y esfuerzo se gasta en autenticar usuarios y validar contraseñas a la entrada. Si un hacker consigue saltarse esa barrera o robar una credencial, el sistema no tiene ningún plan automático para aislar el servicio comprometido y seguir operando.
+\end{itemize}
+
+\subsection*{Nota Personal (Aporte y uso en TA-IND-01)}
+Me llamó la atención constatar que casi todas las soluciones se centran en evitar accesos no autorizados, pero prácticamente ninguna prevé qué hacer una vez que una barrera es vulnerada. En el informe TA-IND-01 utilizaré esta referencia en la sección de Postura Crítica y en el apartado de Tolerancia a Fallos, para evaluar con criterio técnico si la arquitectura bajo análisis cuenta con capacidad de contención o si un fallo de seguridad interno puede comprometer todo el entorno distribuido.
+
+\newpage
+
+% =============================================================
+% FICHA 4: Li et al. (2021)
+% =============================================================
+\section{Ficha Bibliográfica 4: Atributos de Calidad y Tácticas Arquitectónicas}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Cita:} \fullcite{li2021understanding}
+    \item \textbf{DOI:} \href{https://doi.org/10.1016/j.infsof.2020.106449}{10.1016/j.infsof.2020.106449} (Verificado en Elsevier ScienceDirect).
+\end{itemize}
+
+\subsection*{Resumen Analítico (103 palabras)}
+Adoptar microservicios no garantiza automáticamente una mejor arquitectura si no se gestionan adecuadamente los compromisos técnicos entre propiedades no funcionales. A través de una revisión sistemática basada en 72 estudios primarios, los autores caracterizan los seis atributos de calidad predominantes: escalabilidad, rendimiento, disponibilidad, monitoreabilidad, seguridad y testeabilidad. El trabajo sistematiza 19 tácticas arquitectónicas concretas diseñadas para resolverlos. Entre sus conclusiones sobresale que la ganancia en escalabilidad e independencia de despliegue suele entrar en conflicto directo con el rendimiento debido al costo de comunicación distribuida, advirtiendo que migrar desde un monolito exige sopesar detenidamente el retorno de inversión técnico.
+
+\subsection*{Dato Concreto de la Fuente}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Dato (Resumen y Sección 4, pág. 106449):} De las 19 tácticas de arquitectura identificadas, el rendimiento (4 tácticas) y la disponibilidad (4 tácticas) exigen el doble de soluciones que la escalabilidad (2 tácticas), evidenciando que ganar escalabilidad casi siempre perjudica la velocidad del sistema.
+    \item \textbf{Explicación real:} Levantar réplicas de un servicio en contenedores para atender a más usuarios es sencillo con herramientas modernas, pero hacer que esos servicios se comuniquen rápido por la red sin demoras ni caídas requiere implementar cachés y colas complejas que aumentan el costo.
+\end{itemize}
+
+\subsection*{Nota Personal (Aporte y uso en TA-IND-01)}
+Este artículo me ayudó a fundamentar que la distribución de servicios implica un compromiso ineludible entre escalabilidad y latencia de red. Para el informe TA-IND-01 emplearé esta referencia en la sección de Postura Crítica (compromisos y \emph{trade-offs} del diseño) y en el Análisis Comparativo, para juzgar de manera argumentada si las decisiones arquitectónicas del sistema elegido compensan la sobrecarga de comunicación frente a otras alternativas.
+
+\newpage
+
+% =============================================================
+% FICHA 5: Sildatke et al. (2023)
+% =============================================================
+\section{Ficha Bibliográfica 5: Patrón de Microservicios para Flujos Dinámicos}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Cita:} \fullcite{sildatke2023distributed}
+    \item \textbf{DOI:} \href{https://doi.org/10.1007/s42979-023-02256-4}{10.1007/s42979-023-02256-4} (Verificado en Springer Nature / SN Computer Science).
+\end{itemize}
+
+\subsection*{Resumen Analítico (101 palabras)}
+Extraer información de documentos empresariales no estandarizados es un desafío donde los flujos tradicionales ETL se quedan obsoletos. Los autores diseñan e implementan un patrón arquitectónico distribuido basado en microservicios que genera tuberías (pipelines) de extracción de forma automática en tiempo de ejecución. El sistema analiza las características de cada documento entrante, detecta qué componentes especializados se necesitan y ensambla dinámicamente la secuencia de procesamiento adecuada. Mediante un mecanismo de almacenamiento en caché de resultados intermedios y servicios en contenedores comunicados por REST y OpenAPI, la arquitectura logra automatizar la extracción de datos sin intervención manual, adaptándose flexiblemente a formatos heterogéneos de proveedores.
+
+\subsection*{Dato Concreto de la Fuente}
+\begin{itemize}[leftmargin=1.2em]
+    \item \textbf{Dato (Sección ``Achieved Results'' y Tabla 9, págs. 12--14):} Al implementar el patrón con detección de características, el sistema alcanzó un 14\% de procesamiento totalmente automatizado (FAP) en producción sin intervención humana, y el uso de caché entre microservicios recortó tiempos en pasos pesados de conversión.
+    \item \textbf{Explicación real:} En lugar de programar una tubería rígida que falle cuando cambia el formato de un archivo, crearon servicios detectores que identifican la estructura del documento y arman sobre la marcha la cadena de microservicios exacta que debe procesarlo, reutilizando datos previos.
+\end{itemize}
+
+\subsection*{Nota Personal (Aporte y uso en TA-IND-01)}
+Me resultó muy útil ver un caso práctico en producción donde los microservicios se orquestan de manera dinámica según los datos recibidos, en vez de mantener secuencias rígidas. En el informe TA-IND-01 utilizaré esta fuente en las secciones de Arquitectura del Sistema y Modelos de Comunicación, como ejemplo concreto de cómo los componentes distribuidos pueden coordinarse e intercambiar mensajes manteniendo un bajo acoplamiento.
+
+\newpage
+
+% =============================================================
+% DECLARACIÓN DE USO ÉTICO DE IA Y REFERENCIAS IEEE
+% =============================================================
+\section{Declaración de Uso Ético de Inteligencia Artificial}
+
+En cumplimiento de las normas de la actividad formativa FORM-FB-01, se detalla el uso de herramientas de inteligencia artificial en este trabajo:
+
+\begin{enumerate}[leftmargin=1.3em]
+    \item \textbf{Herramienta Empleada:} Asistente de inteligencia artificial basado en modelos de lenguaje extenso (LLM).
+    \item \textbf{Propósito Específico del Uso:}
+    \begin{itemize}
+        \item Asistencia técnica para corregir errores de sintaxis en el código LaTeX y configurar el flujo de compilación con Biber/\emph{biblatex}.
+        \item Apoyo inicial en el ordenamiento de los campos BibTeX para cumplir el formato IEEE.
+    \end{itemize}
+    \item \textbf{Verificación Humana y Autoría:}
+    \begin{itemize}
+        \item \emph{Verificación de Fuentes:} Los cinco artículos científicos fueron revisados directamente desde los archivos PDF guardados en la carpeta del repositorio. Todos los enlaces DOI fueron comprobados manualmente en IEEE Xplore, ACM Digital Library, ScienceDirect y SpringerLink, confirmando autores, año (2021--2024), revista, volumen y páginas.
+        \item \emph{Autoría Propia:} Los resúmenes, la selección y explicación directa de los datos concretos, así como las notas personales de aplicación para TA-IND-01, fueron redactados de forma individual por el estudiante con sus propias palabras, evitando fórmulas automáticas y textos repetitivos.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{1em}
+
+% Bibliografía formal generada automáticamente por BibLaTeX
+\printbibliography[title={Referencias Bibliográficas (Formato IEEE)}]
+
+\end{document}
