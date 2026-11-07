@@ -1,0 +1,235 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[top=1.8cm,bottom=1.8cm,left=2cm,right=2cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{csquotes}
+\usepackage{amsmath}
+
+% Configuración BibLaTeX con estilo IEEE estricto
+\usepackage[backend=biber,style=ieee,citestyle=numeric-comp]{biblatex}
+\addbibresource{referencias.bib}
+
+% Hipervínculos estrictamente en blanco y negro (sin azul)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+\def\UrlBreaks{\do\/\do\-\do\_\do\.\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z}
+\urlstyle{tt}
+
+% Formato sobrio de títulos
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% =============================================================
+% ENCABEZADO Y DATOS INFORMATIVOS
+% =============================================================
+\begin{center}
+    {\large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[0.2em]
+    {\normalsize FACULTAD DE CIENCIAS DE LA COMPUTACIÓN / CIENCIAS DE LA INGENIERÍA}\\[0.1em]
+    {\normalsize CARRERA DE INGENIERÍA DE SOFTWARE}\\[0.25em]
+    {\bfseries ASIGNATURA: APLICACIONES DISTRIBUIDAS (SOF-I-R) --- 7MO NIVEL ``A''}\\[0.4em]
+    \rule{\textwidth}{1.2pt}\\[0.3em]
+    {\Large\bfseries ACTIVIDAD FORMATIVA: FORM-FB-01}\\[0.2em]
+    {\large\bfseries Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas}\\[0.2em]
+    \rule{\textwidth}{1.2pt}
+\end{center}
+
+\vspace{0.2em}
+
+\section{Datos Informativos de la Actividad}
+
+\begin{table}[h!]
+\normalsize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Estudiante Responsable:} & Kenny Isaías España Vera \quad (\textbf{C.I.:} 1208867794) \\
+\textbf{Correo Institucional:} & \texttt{kespanav@uteq.edu.ec} \\
+\textbf{Docente Titular:} & Dr. Gleiston Cicerón Guerrero Ulloa \\
+\textbf{Período Académico:} & Semana 2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\vspace{0.4em}
+
+% =============================================================
+% INTRODUCCIÓN Y ALCANCE
+% =============================================================
+\section{Introducción y Alcance de la Actividad Formativa}
+
+El diseño y mantenimiento de arquitecturas de microservicios demanda una comprensión profunda de cómo se dividen las responsabilidades y de su impacto en el rendimiento bajo entornos distribuidos reales. Esta actividad formativa individual (\textbf{FORM-FB-01}) tiene como propósito establecer el marco bibliográfico preparatorio para el informe sumativo \textbf{TA-IND-01}, donde se llevará a cabo un análisis crítico comparativo de un sistema distribuido real fundamentado en los conceptos de la Unidad~1 (transparencias de distribución, modelos de comunicación, tolerancia a fallos y los teoremas CAP/PACELC).
+
+Para este compendio se examinaron y verificaron cinco fuentes académicas recientes (publicadas entre 2023 y 2024 en revistas Q1 como \emph{IEEE Access} y \emph{Journal of Systems and Software}, además de la conferencia internacional \emph{IEEE ICSA}). Las obras abordan problemáticas complementarias: la vinculación entre los principios clásicos de modularidad y la descomposición moderna, la evolución técnica de los repositorios de código abierto, la medición empírica de sobrecargas en clústeres físicos de Kubernetes, el modelado formal con redes de colas y la identificación en tiempo de ejecución de antipatrones dinámicos.
+
+Con la finalidad de ofrecer una estructura clara y un valor agregado analítico, cada fuente se presenta mediante una matriz tabular individual con bordes definidos. Este formato organiza sistemáticamente la referencia formal en estándar IEEE, su identificador persistente comprobado, un resumen analítico del texto, un dato empírico resumido con su debida contextualización y una nota personal que delimita su aplicación directa en el informe final.
+
+\newpage
+
+% =============================================================
+% FICHA 1: Velepucha & Flores (2023) - TABLA TIPO WORD
+% =============================================================
+\section{Ficha Bibliográfica 1: Principios y Patrones en la Descomposición de Microservicios}
+
+\noindent
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\bfseries FICHA DE LECTURA N.° 1: PRINCIPIOS Y PATRONES} \\
+\hline
+\textbf{Cita} & \parbox{\dimexpr\linewidth-6pt\relax}{\raggedright\vspace{2pt}\fullcite{velepucha2023survey}\vspace{2pt}} \\
+\hline
+\textbf{DOI} & \href{https://doi.org/10.1109/ACCESS.2023.3305687}{10.1109/ACCESS.2023.3305687} (Verificado en IEEE Xplore). \\
+\hline
+\textbf{Resumen Analítico} & La transición desde aplicaciones monolíticas hacia microservicios suele fracasar cuando los equipos desconocen los principios fundamentales que deben guiar la partición del software. Este trabajo presenta un estudio exhaustivo que conecta la teoría de descomposición modular de David Parnas (1972) con las pautas modernas de Martin Fowler y Sam Newman. Los autores evalúan patrones clásicos como Strangler Fig, Backend for Frontend (BFF), Database per Service y Aggregator, analizando sus implicaciones prácticas. Concluyen que la independencia real de los microservicios solo se alcanza si se respeta el ocultamiento de información en los límites de negocio, advirtiendo que compartir bases de datos degenera en antipatrones severos. \\
+\hline
+\textbf{Dato Concreto} & \textbf{Dato (Sección V, Tabla 2, pág. 88349):} Mapeo de modularidad: el criterio de Parnas (1972) de reemplazar módulos de forma independiente equivale a la componentización por servicios de Fowler y al ocultamiento de detalles internos de Newman. En fallos, Fowler plantea \emph{Design for Failure} y Newman \emph{Isolate Failure}. \par\vspace{0.2em}
+\textbf{Explicación:} La partición en microservicios retoma la encapsulación clásica de hace 50 años. Compartir bases de datos entre servicios destruye este aislamiento y recrea dependencias monolíticas. \\
+\hline
+\textbf{Nota Personal} & Este artículo me ayudó a comprender que diseñar microservicios no es simplemente levantar contenedores separados, sino definir fronteras de información muy estrictas. Para el informe TA-IND-01, utilizaré esta fuente en la sección de Arquitectura del Sistema y en el análisis de las Transparencias de Distribución (acceso y ubicación), como base para evaluar si el sistema distribuido seleccionado realmente encapsula sus datos o si mantiene dependencias ocultas entre componentes. \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =============================================================
+% FICHA 2: Assunção et al. (2023) - TABLA TIPO WORD
+% =============================================================
+\section{Ficha Bibliográfica 2: Análisis Empírico de la Coevolución en Repositorios de Microservicios}
+
+\noindent
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\bfseries FICHA DE LECTURA N.° 2: COEVOLUCIÓN EN MICROSERVICIOS} \\
+\hline
+\textbf{Cita} & \parbox{\dimexpr\linewidth-6pt\relax}{\raggedright\vspace{2pt}\fullcite{assuncao2023microservices}\vspace{2pt}} \\
+\hline
+\textbf{DOI} & \href{https://doi.org/10.1016/j.jss.2023.111788}{10.1016/j.jss.2023.111788} (Verificado en Elsevier ScienceDirect). \\
+\hline
+\textbf{Resumen Analítico} & A pesar de que la literatura promueve la total autonomía e independencia de despliegue de los microservicios, existe escasa evidencia empírica sobre cómo evolucionan en proyectos reales. Los autores desarrollan un estudio a gran escala examinando 7.319 commits en 11 repositorios de código abierto, combinando análisis cuantitativo de cambios atómicos con inspección cualitativa. Sus hallazgos demuestran que el mantenimiento está dominado por requerimientos técnicos (infraestructura, librerías compartidas y automatización) más que por reglas de negocio. Asimismo, detectaron patrones recurrentes de coevolución, tales como commits de tipo \emph{shotgun surgery}, donde la modificación de una funcionalidad fuerza alteraciones simultáneas y coordinadas en múltiples microservicios del sistema. \\
+\hline
+\textbf{Dato Concreto} & \textbf{Dato (Sección 4.1, Tabla 2, pág. 7):} En 7.319 commits de 11 proyectos, más del 50\% (y hasta el 70\% en sistemas complejos) corresponde solo a cambios técnicos (infraestructura y librerías), mientras que los cambios exclusivos de lógica de negocio promedian apenas entre el 2\% y el 15\%. \par\vspace{0.2em}
+\textbf{Explicación:} Los microservicios demandan más esfuerzo de mantenimiento técnico (red, dependencias y despliegue) que el desarrollo de funciones de negocio puras. \\
+\hline
+\textbf{Nota Personal} & Me pareció una lectura muy aterrizada a la realidad porque desmitifica la supuesta independencia total de los servicios. En el informe TA-IND-01, emplearé esta referencia en la sección de Postura Crítica (compromisos y trade-offs) y en el apartado de Tolerancia a Fallos, para justificar cómo el acoplamiento técnico en protocolos y librerías compartidas puede desencadenar fallos de compatibilidad en cascada ante actualizaciones imprevistas. \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =============================================================
+% FICHA 3: Meijer, Trubiani y Aleti (2024) - TABLA TIPO WORD
+% =============================================================
+\section{Ficha Bibliográfica 3: Evaluación Experimental de Rendimiento en Clústeres Reales}
+
+\noindent
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\bfseries FICHA DE LECTURA N.° 3: RENDIMIENTO EXPERIMENTAL} \\
+\hline
+\textbf{Cita} & \parbox{\dimexpr\linewidth-6pt\relax}{\raggedright\vspace{2pt}\fullcite{meijer2024experimental}\vspace{2pt}} \\
+\hline
+\textbf{DOI} & \href{https://doi.org/10.1016/j.jss.2024.112183}{10.1016/j.jss.2024.112183} (Verificado en Elsevier ScienceDirect). \\
+\hline
+\textbf{Resumen Analítico} & Las decisiones de diseño arquitectónico en sistemas distribuidos suelen apoyarse en modelos analíticos abstractos que no capturan el comportamiento real bajo estrés. Para verificar su precisión, los autores implementaron un entorno experimental con Kubernetes en una nube privada, ejecutando pruebas de carga de 5 minutos con más de 9.000 peticiones en cuatro patrones: Gateway Aggregator, Gateway Offloading, Chain of Responsibility y CQRS. Los resultados revelan que, si bien las predicciones teóricas guardan correlación con la tendencia general ($r > 0.8$, $p < 0.001$), subestiman los tiempos de respuesta reales debido a sobrecargas de serialización, desempaquetado de mensajes y latencia de red en nodos físicos. \\
+\hline
+\textbf{Dato Concreto} & \textbf{Dato (Sección 4.3, Tabla 4, págs. 9--11):} En clúster Kubernetes real, los modelos teóricos subestiman la latencia entre un 10.62\% y más del 15\%; además, en Gateway Aggregation el desempaquetado de mensajes causó saturación no lineal de CPU en el nodo puerta de enlace. \par\vspace{0.2em}
+\textbf{Explicación:} La deserialización y ensamblado de respuestas en hardware físico genera demoras reales de CPU que los modelos ideales de rendimiento suelen ignorar. \\
+\hline
+\textbf{Nota Personal} & Me gustó este artículo porque aporta rigor empírico y demuestra que el rendimiento real no se calcula solo con fórmulas ideales. Para el informe TA-IND-01, usaré esta fuente en la sección de Experimentación Propia y en el análisis de CAP y PACELC (latencia frente a consistencia), para respaldar las mediciones de tiempos de respuesta del sistema y justificar técnicamente los cuellos de botella detectados en la red. \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =============================================================
+% FICHA 4: Pinciroli, Aleti y Trubiani (2023) - TABLA TIPO WORD
+% =============================================================
+\section{Ficha Bibliográfica 4: Modelado Analítico de Patrones mediante Redes de Colas}
+
+\noindent
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\bfseries FICHA DE LECTURA N.° 4: MODELADO CON REDES DE COLAS} \\
+\hline
+\textbf{Cita} & \parbox{\dimexpr\linewidth-6pt\relax}{\raggedright\vspace{2pt}\fullcite{pinciroli2023performance}\vspace{2pt}} \\
+\hline
+\textbf{DOI} & \href{https://doi.org/10.1109/ICSA56044.2023.00012}{10.1109/ICSA56044.2023.00012} (Verificado en IEEE Xplore). \\
+\hline
+\textbf{Resumen Analítico} & Evaluar el impacto de adoptar patrones de diseño en microservicios antes de su despliegue operativo es un reto complejo para los arquitectos de software. Este artículo formaliza matemáticamente siete patrones arquitectónicos de uso industrial (Anti-Corruption Layer, BFF, CQRS, Competing Consumers, Gateway Aggregation, Gateway Offloading y Static Content Hosting) mediante Redes de Colas (Queueing Networks) y Redes de Petri híbridas. Mediante simulaciones bajo cargas de trabajo heterogéneas, los autores analizan las ganancias y penalizaciones de rendimiento (\emph{pains and gains}). Demuestran que descargar funciones transversales al Gateway (Gateway Offloading) puede generar graves retrasos de latencia si la carga supera la capacidad del intermediario. \\
+\hline
+\textbf{Dato Concreto} & \textbf{Dato (Sección IV-B, Fig. 5, págs. 41--43):} Con redes de colas se comprobó que si las tareas descargadas en Gateway Offloading superan el 50\% de la carga, la cola del Gateway se satura y la latencia promedio se incrementa más del 40\% respecto al diseño sin descarga. \par\vspace{0.2em}
+\textbf{Explicación:} Concentrar demasiadas tareas (seguridad, cuotas, registro) en el Gateway convierte la entrada en un embotellamiento crítico. \\
+\hline
+\textbf{Nota Personal} & Este texto me enseñó que los patrones arquitectónicos no son balas de plata y que traen consigo penalizaciones de rendimiento calculables. En el informe TA-IND-01, voy a utilizar este artículo en la sección de Modelos de Comunicación y en el Análisis Comparativo, para confrontar el impacto del encolamiento y los intermediarios centralizados frente a esquemas de mensajería asíncrona punto a punto. \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =============================================================
+% FICHA 5: Parker et al. (2023) - TABLA TIPO WORD
+% =============================================================
+\section{Ficha Bibliográfica 5: Visualización Dinámica de Antipatrones en Tiempo de Ejecución}
+
+\noindent
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\bfseries FICHA DE LECTURA N.° 5: VISUALIZACIÓN DE ANTIPATRONES} \\
+\hline
+\textbf{Cita} & \parbox{\dimexpr\linewidth-6pt\relax}{\raggedright\vspace{2pt}\fullcite{parker2023visualizing}\vspace{2pt}} \\
+\hline
+\textbf{DOI} & \href{https://doi.org/10.1109/ACCESS.2023.3236165}{10.1109/ACCESS.2023.3236165} (Verificado en IEEE Xplore). \\
+\hline
+\textbf{Resumen Analítico} & La complejidad topológica de las arquitecturas de microservicios dificulta la detección de anomalías estructurales mediante análisis estático de código fuente, ya que muchos antipatrones solo se manifiestan bajo el tráfico real de producción. Este estudio de mapeo sistemático analiza las herramientas y métodos existentes para identificar y visualizar antipatrones dinámicos (dependencias cíclicas, cuellos de botella y nudos o \emph{knots}). Los resultados evidencian que las dependencias cíclicas en tiempo de ejecución son las más reportadas y riesgosas al inducir bloqueos y sobrecarga en cascada. Los autores destacan que la integración de trazas distribuidas con bases de datos de grafos resulta fundamental para diagnosticar el sistema. \\
+\hline
+\textbf{Dato Concreto} & \textbf{Dato (Sección IV, Tabla 2, págs. 4438--4440):} Las dependencias cíclicas abarcan más del 60\% de detecciones en grafos de servicios, pero problemas dinámicos severos como nudos (\emph{knots}) o cuellos de botella en runtime solo son detectados por el 20\% de las herramientas analizadas. \par\vspace{0.2em}
+\textbf{Explicación:} Los servicios pueden parecer desacoplados en el código estático, pero en ejecución generan bucles circulares de llamadas que saturan la memoria y bloquean el sistema. \\
+\hline
+\textbf{Nota Personal} & Me pareció una investigación fundamental porque demuestra que revisar el repositorio no basta para garantizar la estabilidad de un sistema distribuido. En el informe TA-IND-01, incorporaré esta fuente en la sección de Tolerancia a Fallos (detección y recuperación de incidentes) y en la Postura Crítica, para analizar si el sistema distribuido elegido provee observabilidad con grafos de dependencia o si es susceptible a fallas circulares en runtime. \\
+\hline
+\end{tabularx}
+
+\newpage
+
+% =============================================================
+% DECLARACIÓN DE USO ÉTICO DE IA Y REFERENCIAS IEEE
+% =============================================================
+\section{Declaración de Uso Ético de Inteligencia Artificial}
+
+De acuerdo con las pautas de la actividad académica, se declara de forma transparente el uso de herramientas de inteligencia artificial en la preparación de este trabajo:
+
+\begin{itemize}[leftmargin=1.3em]
+    \item \textbf{Herramienta y alcance:} Se empleó un modelo de lenguaje exclusivamente como soporte para la diagramación de tablas matriciales en LaTeX (\emph{tabularx}) y en la verificación de la sintaxis del archivo de bibliografía con Biber.
+    \item \textbf{Verificación de fuentes:} Todas las fuentes académicas citadas fueron consultadas directamente desde los artículos originales en formato PDF. Se comprobó manualmente que los enlaces DOI correspondan con exactitud a los registros oficiales en IEEE Xplore y Elsevier ScienceDirect.
+    \item \textbf{Autoría y redacción:} Los resúmenes, los datos concretos seleccionados y las notas personales sobre la aplicación en el informe TA-IND-01 fueron redactados de forma individual a partir de la lectura y comprensión propia de los documentos, evitando expresiones genéricas o textos automáticos.
+\end{itemize}
+
+\vspace{1.2em}
+
+% Bibliografía formal generada automáticamente por BibLaTeX
+\printbibliography[title={Referencias Bibliográficas (Formato IEEE)}]
+
+\end{document}
