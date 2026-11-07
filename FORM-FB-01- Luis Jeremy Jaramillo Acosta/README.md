@@ -1,9 +1,14 @@
-# FICHA BIBLIOGRÁFICA: FORM-FB-01
-## Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas
+# FORM-FB-01 — Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas
+
+[![Asignatura](https://img.shields.io/badge/Asignatura-Aplicaciones%20Distribuidas%20(SOF--I--R)-007acc.svg)](#)
+[![Nivel](https://img.shields.io/badge/Nivel-7mo%20Nivel%20--%20Paralelo%20A-brightgreen.svg)](#)
+[![Modalidad](https://img.shields.io/badge/Modalidad-Individual%20--%20Formativa-orange.svg)](#)
+[![Compilador](https://img.shields.io/badge/LaTeX-pdflatex%20%2B%20biber-blueviolet.svg)](#)
 
 ---
 
-### 📌 Datos Informativos
+## 📌 1. Datos Informativos
+
 - **Institución:** Universidad Técnica Estatal de Quevedo (UTEQ)
 - **Facultad:** Facultad de Ciencias de la Computación / Ciencias de la Ingeniería
 - **Carrera:** Ingeniería de Software
@@ -11,68 +16,100 @@
 - **Nivel / Paralelo:** 7mo Nivel — Paralelo "A"
 - **Docente:** Dr. Gleiston Cicerón Guerrero Ulloa
 - **Estudiante Responsable:** Luis Jeremy Jaramillo Acosta
-- **C.I.:** 1206898718
+- **Cédula de Identidad:** `1206898718`
 - **Correo Institucional:** `ljaramilloa@uteq.edu.ec`
 - **Código de Actividad:** FORM-FB-01
+- **Período Académico:** Semana 2 (2 al 8 de noviembre de 2026)
 
 ---
 
-### 📖 Referencia Principal Analizada
+## 🎯 2. Propósito de la Actividad
 
-#### Formato IEEE:
-> A. Avizienis, J.-C. Laprie, B. Randell, and C. Landwehr, "Basic concepts and taxonomy of dependable and secure computing," *IEEE Transactions on Dependable and Secure Computing*, vol. 1, no. 1, pp. 11–33, Jan.–Mar. 2004, doi: [10.1109/TDSC.2004.2](https://doi.org/10.1109/TDSC.2004.2).
+Esta actividad formativa individual prepara al estudiante para redactar el **Informe Académico Individual TA-IND-01** (*Análisis crítico de un sistema distribuido real*), correspondiente a la Semana 3. 
 
-#### Formato APA (7.ª edición):
-> Avizienis, A., Laprie, J.-C., Randell, B., & Landwehr, C. (2004). Basic concepts and taxonomy of dependable and secure computing. *IEEE Transactions on Dependable and Secure Computing*, 1(1), 11–33. https://doi.org/10.1109/TDSC.2004.2
+El presente compendio reúne cinco fuentes científicas rigurosamente verificadas (publicadas entre 2020 y 2023 en IEEE, Elsevier y editoriales reconocidas), que cubren comparativas empíricas entre arquitecturas monolíticas y de microservicios, revisiones sistemáticas de adopción en DevOps, marcos de evaluación de migración y fundamentos de escalabilidad y distribución.
 
 ---
 
-### 📂 Estructura de esta Carpeta
+## 📂 3. Estructura de Archivos del Espacio de Trabajo
 
 ```text
 FORM-FB-01- Luis Jeremy Jaramillo Acosta/
 │
-├── README.md                                          # Ficha bibliográfica detallada del estudiante
-├── Referencia (PDF)/                                 # Documentos y artículos fuente en formato PDF
-│   ├── Basic_concepts_and_taxonomy_of_dependable_and_secu.pdf
-│   └── R. Vitillo, Understanding Distributed Systems What Every Developer Should Know About Large Distributed Applications, 2nd ed. London.pdf
+├── main.tex                                           # Código fuente principal en LaTeX
+├── referencias.bib                                    # Archivo unificado BibLaTeX con las 5 fuentes
+├── main.pdf                                           # Documento PDF final compilado
+├── README.md                                          # Documentación e instrucciones de compilación
 │
-└── Referencias (.bib)/                                # Citas estructuradas en formato BibTeX
-    ├── Avizienis2004Dependable.bib
-    └── Vitillo2022DistributedSystems.bib
+└── Referencias (PDF)/                                 # Documentos fuente originales en formato PDF
+    ├── [1] Monolithic_vs_Microservice_Architecture_A_Performa.pdf
+    ├── [2] waseem2020sms.pdf
+    ├── [3] Towards_a_migration_framework_for_Microservices.pdf
+    ├── [4] Building Microservices Designing Fine-Grained Systems 2nd By Sam Newman.pdf
+    └── [5] Distributed_Systems_4.pdf
 ```
 
 ---
 
-### 📑 Contenido de la Ficha Bibliográfica
+## 📚 4. Fuentes Académicas Verificadas (5 Fichas)
 
-#### 1. Resumen Ejecutivo
-El artículo presenta un marco conceptual unificado y una taxonomía exhaustiva para la confiabilidad (*dependability*) y la seguridad en sistemas computacionales, con especial aplicación en arquitecturas y sistemas distribuidos. Los autores integran conceptos previamente fragmentados entre las comunidades de tolerancia a fallos y seguridad de la información. Se definen formalmente las amenazas (fallas, errores y averías), los atributos de la confiabilidad (disponibilidad, confiabilidad operativa, seguridad frente a catástrofes, integridad y mantenibilidad) y los medios para alcanzarla (prevención, tolerancia, eliminación y pronóstico de fallas).
+| N° | Autores | Título | Revista / Editorial | Año | Identificador (DOI / ISBN) |
+|:--:|:--------|:-------|:--------------------|:---:|:---------------------------|
+| **1** | G. Blinowski, A. Ojdowska, A. Przybyłek | *Monolithic vs. Microservice Architecture: A Performance and Scalability Evaluation* | *IEEE Access* (IEEE) | 2022 | DOI: [10.1109/ACCESS.2022.3152803](https://doi.org/10.1109/ACCESS.2022.3152803) |
+| **2** | M. Waseem, P. Liang, M. Shahin | *A Systematic Mapping Study on Microservices Architecture in DevOps* | *Journal of Systems and Software* (Elsevier) | 2020 | DOI: [10.1016/j.jss.2020.110798](https://doi.org/10.1016/j.jss.2020.110798) |
+| **3** | F. Auer, V. Lenarduzzi, M. Felderer, D. Taibi | *From Monolithic Systems to Microservices: An Assessment Framework* | *Information and Software Technology* (Elsevier) | 2021 | DOI: [10.1016/j.infsof.2021.106600](https://doi.org/10.1016/j.infsof.2021.106600) |
+| **4** | S. Newman | *Building Microservices: Designing Fine-Grained Systems* (2nd ed.) | O'Reilly Media | 2021 | ISBN: `978-1492034025` |
+| **5** | M. van Steen, A. S. Tanenbaum | *Distributed Systems* (4th ed.) | Maarten van Steen | 2023 | ISBN: `978-9081540636` |
 
-#### 2. Palabras Clave
-- *Dependability* (Confiabilidad sistémica)
-- *Fault Tolerance* (Tolerancia a fallos)
-- *Availability* (Disponibilidad)
-- *Fault-Error-Failure Chain* (Cadena Falla-Error-Avería)
-- *Distributed Systems Security* (Seguridad en Sistemas Distribuidos)
-- *System Taxonomy* (Taxonomía de Sistemas)
+---
 
-#### 3. Cadena Fundamental de Causación: Falla $\rightarrow$ Error $\rightarrow$ Avería
-1. **Falla (*Fault*):** La causa interna o externa que da origen a un estado anómalo (ejemplo: caída de un nodo en el clúster, cable de red desconectado o bug en el código).
-2. **Error (*Error*):** La manifestación del estado anómalo dentro del sistema que puede llevar a una falla visible (ejemplo: inconsistencia en la memoria o retraso de mensajes en la cola).
-3. **Avería / Fracaso (*Failure*):** La desviación del servicio entregado respecto a las especificaciones o expectativas del usuario (ejemplo: respuesta 503 Service Unavailable, datos corruptos entregados al cliente).
+## 🛠️ 5. Instrucciones de Compilación (Requisitos de la Cátedra)
 
-#### 4. Medios para Garantizar la Confiabilidad en Arquitecturas Distribuidas
-- **Prevención de Fallas (*Fault Prevention*):** Prácticas de diseño riguroso y arquitecturas defensivas.
-- **Tolerancia a Fallos (*Fault Tolerance*):** Detección de errores y recuperación del sistema (enmascaramiento mediante replicación, consenso distribuido como Raft/Paxos).
-- **Eliminación de Fallas (*Fault Removal*):** Pruebas de integración, verificación formal y depuración continua.
-- **Pronóstico de Fallas (*Fault Forecasting*):** Monitoreo telemétrico, métricas de confiabilidad (MTTF, MTBF, MTTR).
+Conforme a las directrices de la actividad, a continuación se especifican el **compilador**, el **archivo principal**, el **orden de comandos** y las **dependencias** para compilar el documento de forma reproducible:
 
-#### 5. Aplicabilidad en Sistemas Distribuidos Modernos
-En entornos distribuidos modernos (microservicios, nube y sistemas basados en red), los nodos individuales son inherentemente propensos a fallar de manera independiente (*partial failures*). Esta taxonomía establece la justificación teórica para implementar patrones arquitectónicos como:
-- **Circuit Breaker** (aislamiento de fallas en cascada).
-- **Replicación activa y pasiva** (redundancia de información y de procesamiento).
-- **Consenso distribuido** (acuerdo sobre estados globales a pesar de fallas bizantinas o por parada).
+### 5.1. Compilador
+- **Compilador Principal:** `pdflatex` (pdfTeX versión 3.141592653 o superior).
+- **Motor Bibliográfico:** `biber` (versión 2.19 o superior compatible con `biblatex`).
+- **Distribuciones Soportadas:** TeX Live (2023 o superior), MiKTeX (24.x o superior) o plataformas en la nube como Overleaf.
 
-#### 6. Conclusión y Valoración Crítica
-El trabajo de Avizienis et al. es la referencia canónica indispensable para cualquier estudio sobre sistemas distribuidos. Demuestra que la confiabilidad no es una propiedad añadida a posteriori, sino una propiedad emergente del diseño arquitectónico global. En aplicaciones distribuidas, asumir que la red es confiable es la primera falacia; diseñar tolerando averías parciales es el principio fundamental.
+### 5.2. Archivo Principal y Base Bibliográfica
+- **Archivo Fuente Principal:** `main.tex`
+- **Archivo Bibliográfico Único:** `referencias.bib`
+- **Salida Generada:** `main.pdf`
+
+### 5.3. Orden Estricto de Comandos para Compilación
+Para garantizar que se resuelvan adecuadamente los enlaces internos, las referencias cruzadas y la bibliografía en formato IEEE, ejecute la siguiente secuencia en la terminal:
+
+```bash
+# 1. Primera pasada para generar archivos auxiliares (.aux, .bcf)
+pdflatex -interaction=nonstopmode main.tex
+
+# 2. Procesamiento del archivo unificado de citas con Biber
+biber main
+
+# 3. Segunda pasada para incorporar las referencias generadas
+pdflatex -interaction=nonstopmode main.tex
+
+# 4. Tercera pasada para resolver numeración e hipervínculos definitivos
+pdflatex -interaction=nonstopmode main.tex
+```
+
+### 5.4. Dependencias y Paquetes LaTeX Requeridos
+El archivo `main.tex` utiliza los siguientes paquetes estándar del ecosistema LaTeX:
+- `inputenc` (`[utf8]`): Codificación universal de caracteres y tildes.
+- `babel` (`[spanish, es-tabla]`): Adaptación tipográfica y términos en español.
+- `geometry` (`[margin=2.5cm]`): Dimensionamiento de márgenes de página.
+- `xcolor`: Gestión de paleta de colores corporativos.
+- `tcolorbox`: Cajas estructuradas para la diagramación de cada ficha bibliográfica.
+- `csquotes`: Manejo semántico de citas textuales.
+- `hyperref`: Enlaces activos a DOIs y navegación en el PDF.
+- `biblatex` (`[backend=biber, style=ieee, sorting=none]`): Motor bibliográfico con formato oficial IEEE.
+
+---
+
+## 🤖 6. Declaración de Uso de Inteligencia Artificial
+
+En cumplimiento estricto con las políticas de honestidad académica de la UTEQ:
+- Se declara el uso de la herramienta **Gemini (Google)** exclusivamente para labores de **revisión ortográfica, control de acentuación (tildes) y ajuste de puntuación** sobre los borradores previamente redactados por el estudiante.
+- No se utilizó IA generativa para la creación ni síntesis de los resúmenes, datos concretos ni notas de aplicación técnica.
+- Todas las fuentes, cifras y citas fueron verificadas manualmente contra las publicaciones oficiales indexadas.
