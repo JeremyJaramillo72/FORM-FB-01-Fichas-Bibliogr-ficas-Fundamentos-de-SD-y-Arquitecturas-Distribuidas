@@ -16,24 +16,15 @@
 - **Nivel / Paralelo:** 7mo Nivel — Paralelo "A"
 - **Docente:** Dr. Gleiston Cicerón Guerrero Ulloa
 - **Estudiante Responsable:** Heiner Ariel Zambrano Ronquillo
-- **Cédula de Identidad:** 0957140346
 - **Correo Institucional:** `hzambranor@uteq.edu.ec`
-- **Código de Actividad:** FORM-FB-01
-- **Período Académico:** Semana 2 (2 al 8 de noviembre de 2026)
-- **Repositorio Oficial:** [Repositorio GitHub Grupal](https://github.com/JeremyJaramillo72/FORM-FB-01-Fichas-Bibliogr-ficas-Fundamentos-de-SD-y-Arquitecturas-Distribuidas)
 
 ---
 
 ## 🎯 2. Propósito y Alcance de la Actividad
 
-Esta actividad formativa individual prepara al estudiante para redactar el **Informe Académico Individual TA-IND-01** (*Análisis crítico de un sistema distribuido real*), correspondiente a la Semana 3. 
+El objetivo central de este trabajo formativo radica en consolidar una base teórica y empírica rigurosa que sirva de sustento para la elaboración del informe individual **TA-IND-01**. En dicha entrega sumativa se evaluará el comportamiento, la tolerancia a fallos y los patrones arquitectónicos de una plataforma distribuida en producción.
 
-El presente compendio sistematiza cinco fuentes científicas primarias de alto impacto (publicadas entre 2021 y 2024 en revistas internacionales indexadas en Scopus Q1 y Web of Science). Cada ficha bibliográfica incluye:
-1. Referencia formal en formato IEEE generada con `biblatex` a partir de un archivo `.bib`.
-2. Identificador persistente verificado (DOI).
-3. Resumen analítico de aproximadamente 100 palabras redactado de forma crítica y contextualizada a la fuente.
-4. Dato empírico concreto (cifras, taxonomías o conclusiones) con su ubicación exacta (sección y página) y un análisis detallado de su implicación técnica.
-5. Nota personal que fundamenta el aporte de la fuente y la sección específica del informe TA-IND-01 donde será utilizada.
+A través de esta recopilación se analizan a fondo cinco publicaciones académicas indexadas (2021 a 2024), seleccionadas desde repositorios de primer nivel como IEEE Xplore, ACM Digital Library, Elsevier y Springer Nature. La investigación se orienta a esclarecer los desafíos de seguridad perimetral, la identificación de causa raíz en caídas del sistema y los compromisos reales entre escalabilidad y latencia en entornos de microservicios.
 
 ---
 
@@ -60,10 +51,7 @@ De acuerdo con las instrucciones de la actividad académica, a continuación se 
 
 ### 4.2. Archivo Principal
 - **Documento Principal (5 fichas completas, 7 páginas):** `main.tex` (genera `main.pdf`).
-  *(Alias con nomenclatura formal del estudiante:* `FORM-FB-01_Zambrano_Heiner.tex` $\rightarrow$ `FORM-FB-01_Zambrano_Heiner.pdf`*).*
 - **Base de Datos Bibliográfica:** `referencias.bib` (archivo unificado en estándar BibLaTeX / IEEE con 5 entradas verificadas).
-- **Documento Adicional para Entrega en LMS / SGA (1 sola página):** `sga.tex` (genera `sga.pdf`).
-  *(Alias formal:* `FORM-FB-01_SGA_Zambrano_Heiner.tex` $\rightarrow$ `FORM-FB-01_SGA_Zambrano_Heiner.pdf`*).*
 
 ### 4.3. Orden de Comandos
 Para compilar el documento principal resolviendo correctamente las citas en formato IEEE, la base bibliográfica, los enlaces y las referencias cruzadas, ejecute la siguiente secuencia estricta de 4 comandos en la terminal:
@@ -81,12 +69,6 @@ pdflatex -interaction=nonstopmode main.tex
 # Paso 4: Tercera pasada para resolver numeración definitiva, hipervínculos y total de páginas
 pdflatex -interaction=nonstopmode main.tex
 ```
-
-> **Compilación del documento de entrega en SGA (`sga.tex` de 1 página):**  
-> Dado que este documento no utiliza bibliografía externa, se compila directamente en un solo paso:
-> ```bash
-> pdflatex -interaction=nonstopmode sga.tex
-> ```
 
 ### 4.4. Dependencias (Paquetes LaTeX Requeridos)
 El documento hace uso exclusivo de paquetes estándar incluidos en cualquier instalación completa de MiKTeX o TeX Live:
@@ -112,14 +94,7 @@ FORM-FB-01- Zambrano Ronquillo Heiner/
 ├── README.md                                          # Documentación técnica y guía de compilación
 ├── main.tex                                           # Código fuente LaTeX principal (5 fichas, resumen, dato concreto, IEEE)
 ├── main.pdf                                           # PDF compilado final del informe completo (7 páginas)
-├── sga.tex                                            # Código fuente LaTeX para entrega en SGA (1 sola página)
-├── sga.pdf                                            # Documento PDF compilado para subir al SGA (1 sola página)
 ├── referencias.bib                                    # Base de datos BibTeX unificada y verificada (claves IEEE)
-│
-├── FORM-FB-01_Zambrano_Heiner.tex                     # Archivo con nomenclatura formal de la actividad
-├── FORM-FB-01_Zambrano_Heiner.pdf                     # PDF con nomenclatura formal
-├── FORM-FB-01_SGA_Zambrano_Heiner.tex                 # Archivo SGA con nomenclatura formal
-├── FORM-FB-01_SGA_Zambrano_Heiner.pdf                 # PDF SGA con nomenclatura formal
 │
 ├── Referencia (PDF)/                                  # Documentos primarios científicos originales en formato PDF
 │   ├── A Distributed Microservice Architecture Pattern for the Automated Generation of Information Extraction Pipelines.pdf
@@ -135,11 +110,3 @@ FORM-FB-01- Zambrano Ronquillo Heiner/
     ├── Security in microservice-based systems A Multivocal literature review.bib
     └── Understanding and addressing quality attributes of microservices architecture A Systematic literature review.bib
 ```
-
----
-
-## 🤖 6. Declaración de Uso Ético de Inteligencia Artificial
-
-- **Herramienta Empleada:** Asistente de inteligencia artificial generativa basado en modelos de lenguaje extenso (LLM).
-- **Propósito:** Asistencia técnica auxiliar para la depuración sintáctica del código LaTeX y la estructuración del flujo de compilación con Biber.
-- **Verificación Humana y Autoría Intelectual:** Todos los documentos fueron leídos y contrastados directamente a partir de los archivos PDF provistos. Cada DOI fue validado de forma manual en las bases de datos de IEEE Xplore, ACM Digital Library y ScienceDirect, comprobando la veracidad de los autores, títulos, revistas, volúmenes y páginas. Los resúmenes analíticos (~100 palabras), la explicación contextualizada de los datos concretos y las notas de aplicación para TA-IND-01 fueron redactados de forma individual por el estudiante Heiner Ariel Zambrano Ronquillo.
