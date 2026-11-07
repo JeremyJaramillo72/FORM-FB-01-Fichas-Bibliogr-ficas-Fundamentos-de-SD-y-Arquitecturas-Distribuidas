@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.2cm,headheight=14pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{amsmath}
+
+\usepackage[backend=bibtex,style=ieee,sorting=none,doi=true,isbn=true]{biblatex}
+\ExecuteBibliographyOptions{url=false}
+\addbibresource{Referencias.bib}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small UTEQ -- Aplicaciones Distribuidas}
+\fancyhead[R]{\small FORM-FB-01: Fichas Bibliográficas}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{center}
+    {\large \textbf{UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}}\\[1.5mm]
+    {\normalsize \textbf{FACULTAD DE CIENCIAS DE LA COMPUTACIÓN}}\\[1.5mm]
+    {\normalsize \textbf{CARRERA DE INGENIERÍA DE SOFTWARE}}\\[4mm]
+    
+    {\Large \textbf{ACTIVIDAD FORMATIVA FORM-FB-01}}\\[2mm]
+    {\large \textbf{Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas}}\\[1mm]
+\end{center}
+
+\vspace{2mm}
+\hrule
+\vspace{3mm}
+
+\noindent
+\begin{tabular}{@{}ll@{}}
+    \textbf{Estudiante:} & Luis Alberto Paca Pilataza \\
+    \textbf{Cédula de Identidad:} & 1251252225 \\
+    \textbf{Correo Institucional:} & \texttt{lpacap@uteq.edu.ec} \\
+    \textbf{Asignatura:} & Aplicaciones Distribuidas - 7mo Nivel, Paralelo ``A'' \\
+    \textbf{Periodo Académico:} & Noviembre 2026 \\
+\end{tabular}
+
+\vspace{3mm}
+\hrule
+\vspace{5mm}
+
+\section*{1. Introducción}
+El presente trabajo corresponde a la actividad formativa \textbf{FORM-FB-01}, cuyo propósito es examinar, sistematizar y validar cinco fuentes académicas especializadas en sistemas distribuidos y arquitecturas de microservicios publicadas entre 2021 y 2026. 
+
+La selección se fundamenta únicamente en los documentos científicos adjuntos en la carpeta del estudiante: cuatro artículos publicados en revistas de alto impacto indexadas en IEEE y Elsevier (Scopus Q1 y Q2) y un libro técnico de referencia internacional editado por O'Reilly Media con código ISBN. Cada fuente ha sido cotejada directamente en su respectivo PDF (autores, título, volumen, páginas y DOI/ISBN), constituyendo la fundamentación conceptual para el informe \textbf{TA-IND-01} (Análisis crítico de un sistema distribuido real).
+
+\vspace{4mm}
+
+\subsection*{Ficha Bibliográfica N$^\circ$ 1: Descomposición de Monolitos hacia Microservicios}
+
+\noindent\textbf{Referencia Formato IEEE:}\\
+\nocite{Abgaz2023}\cite{Abgaz2023} Y. Abgaz \textit{et al.}, ``Decomposition of Monolith Applications Into Microservices Architectures: A Systematic Review,'' \textit{IEEE Transactions on Software Engineering}, vol. 49, no. 8, pp. 4213--4242, Aug. 2023.
+
+\vspace{1.5mm}
+\noindent\textbf{DOI Verificado:} \url{https://doi.org/10.1109/TSE.2023.3287297}\\
+\textbf{Indexación:} IEEE Transactions on Software Engineering (Scopus Q1).
+
+\vspace{2mm}
+\noindent\textbf{Resumen Técnico Contextualizado (98 palabras):}\\
+El artículo aborda la complejidad de migrar aplicaciones monolíticas legadas hacia arquitecturas de microservicios sin comprometer la continuidad operativa. Para ordenar el estado del arte, los autores ejecutaron una revisión sistemática de literatura (SLR) y un proceso de snowballing, filtrando 5,022 publicaciones hasta seleccionar 35 estudios primarios rigurosos. Como resultado fundamental, presentan el marco M2MDF (Monolith to Microservices Decomposition Framework), el cual clasifica las estrategias según el tipo de datos analizados (código estático, trazas de ejecución y modelos de dominio) y su madurez. Demuestran que la descomposición puramente automatizada fracasa sin la participación directa de expertos de dominio.
+
+\vspace{2mm}
+\noindent\textbf{Dato Concreto y Verificable:}\\
+\textbf{Sección IV-A, pág. 4214 y pág. 4222 (Fig. 4):} De un total de 5,022 resultados iniciales de búsqueda recopilados en bases de datos científicas, únicamente 35 investigaciones superaron las cuatro fases de filtrado e inclusión. Asimismo, en la \textbf{Sección V, pág. 4235}, los autores concluyen formalmente que las herramientas de particionamiento totalmente automatizadas carecen de la capacidad de inferir la semántica contextual del negocio, ratificando la necesidad imperativa de intervención humana calificada.
+
+\vspace{2mm}
+\noindent\textbf{Nota Personal y Articulación con TA-IND-01:}\\
+Esta investigación me permitió comprender que la descomposición de un sistema monolítico distribuido no es un mero procedimiento algorítmico de agrupamiento de código fuente o clases, sino una decisión que debe reflejar fielmente las fronteras funcionales del negocio para evitar acoplamientos destructivos. En mi informe \textbf{TA-IND-01}, emplearé el marco M2MDF dentro de la sección \textit{``Metodología de Descomposición y Análisis Estático/Dinámico''}, sustentando técnicamente cómo balancear el análisis de trazas de ejecución dinámicas con los modelos de dominio para justificar los límites de los microservicios en el caso práctico asignado.
+
+\vspace{4mm}
+\hrule
+\vspace{5mm}
+
+\subsection*{Ficha Bibliográfica N$^\circ$ 2: Evolución y Retos en la Identificación de Microservicios}
+
+\noindent\textbf{Referencia Formato IEEE:}\\
+\nocite{Oumoussa2024}\cite{Oumoussa2024} I. Oumoussa and R. Saidi, ``Evolution of Microservices Identification in Monolith Decomposition: A Systematic Review,'' \textit{IEEE Access}, vol. 12, pp. 23389--23405, 2024.
+
+\vspace{1.5mm}
+\noindent\textbf{DOI Verificado:} \url{https://doi.org/10.1109/ACCESS.2024.3365079}\\
+\textbf{Indexación:} IEEE Access (Scopus Q1-Q2).
+
+\vspace{2mm}
+\noindent\textbf{Resumen Técnico Contextualizado (99 palabras):}\\
+Los autores investigan la falta de estandarización en las técnicas de identificación de microservicios durante la modernización de monolitos. Con este fin, desarrollaron una revisión sistemática exhaustiva sobre 168 investigaciones primarias extraídas de múltiples repositorios científicos, examinando tendencias temporales, tipos de contribución y herramientas propuestas. Los hallazgos revelan que la disciplina enfrenta barreras críticas: escasez de comparaciones empíricas directas entre métodos, ausencia de métricas de calidad universales para validar los límites de los servicios y un sesgo desproporcionado hacia aplicaciones escritas en Java, lo cual limita la transferibilidad práctica de los resultados hacia ecosistemas empresariales heterogéneos.
+
+\vspace{2mm}
+\noindent\textbf{Dato Concreto y Verificable:}\\
+\textbf{Sección III-C, pág. 23392:} La selección metodológica final consolidó formalmente 168 artículos primarios (partiendo de 35 identificados inicialmente y añadiendo 133 mediante rastreo exhaustivo de referencias). En la \textbf{Sección VI-B, pág. 23401}, el análisis evidencia que la gran mayoría de la literatura restringe sus validaciones experimentales exclusivamente a sistemas legados construidos sobre Java, dejando desatendidos entornos con arquitecturas políglotas y lenguajes corporativos críticos.
+
+\vspace{2mm}
+\noindent\textbf{Nota Personal y Articulación con TA-IND-01:}\\
+El estudio de Oumoussa y Saidi me alertó sobre los riesgos de evaluar la calidad de los microservicios únicamente mediante métricas tradicionales de orientación a objetos (cohesión y acoplamiento sintáctico), sin considerar la sobrecarga inducida en la red distribuida. En el informe \textbf{TA-IND-01}, incorporaré estas conclusiones en la sección de \textit{``Evaluación de Fronteras de Servicio y Deuda Técnica''}, evaluando críticamente las compensaciones entre granularidad fina y el incremento de llamadas inter-servicio en el diseño de la arquitectura.
+
+\vspace{4mm}
+\hrule
+\vspace{5mm}
+
+\subsection*{Ficha Bibliográfica N$^\circ$ 3: Diagnóstico Robusto de Fallas con Datos Multimodales}
+
+\noindent\textbf{Referencia Formato IEEE:}\\
+\nocite{Zhang2023}\cite{Zhang2023} S. Zhang \textit{et al.}, ``Robust Failure Diagnosis of Microservice System Through Multimodal Data,'' \textit{IEEE Transactions on Services Computing}, vol. 16, no. 6, pp. 3851--3864, Nov.-Dec. 2023.
+
+\vspace{1.5mm}
+\noindent\textbf{DOI Verificado:} \url{https://doi.org/10.1109/TSC.2023.3290018}\\
+\textbf{Indexación:} IEEE Transactions on Services Computing (Scopus Q1).
+
+\vspace{2mm}
+\noindent\textbf{Resumen Técnico Contextualizado (101 palabras):}\\
+La investigación aborda el desafío de diagnosticar averías en sistemas de microservicios donde las fallas en cascada degradan rápidamente la disponibilidad global. Los autores identifican que las soluciones tradicionales fracasan al depender de fuentes de telemetría aisladas. Para solucionarlo, llevaron a cabo un estudio empírico con fallas reales y diseñaron DiagFusion, un marco que integra métricas temporales, registros textuales y trazas distribuidas. Mediante técnicas de incrustación multimodal, grafos de dependencia topológica y redes neuronales de grafos (GNN), el sistema localiza la instancia causante y categoriza la anomalía, superando sustancialmente a los métodos basados en reglas o datos monomodales.
+
+\vspace{2mm}
+\noindent\textbf{Dato Concreto y Verificable:}\\
+\textbf{Resumen y Sección I, pág. 3851; Sección VII, pág. 3862 (Tabla VII):} Las evaluaciones empíricas ejecutadas sobre conjuntos de datos industriales reales demuestran que DiagFusion supera significativamente a los enfoques del estado del arte, alcanzando mejoras del \textbf{20.9\% al 368\%} en la precisión de localización de la instancia raíz de la falla y del \textbf{11.0\% al 169\%} en la determinación exacta del tipo de anomalía.
+
+\vspace{2mm}
+\noindent\textbf{Nota Personal y Articulación con TA-IND-01:}\\
+Este artículo transformó mi comprensión práctica sobre la observabilidad distribuida. Comprobé que inspeccionar métricas aisladas como el uso de memoria o revisar logs independientes resulta ineficaz cuando un error se propaga en cadena entre decenas de nodos. En \textbf{TA-IND-01}, utilizaré los fundamentos de DiagFusion en la sección \textit{``Confiabilidad Sistémica, Tolerancia a Fallos y Observabilidad Telemétrica''}, argumentando por qué es indispensable correlacionar trazas de extremo a extremo con telemetría multimodal para aislar averías en sistemas de alta disponibilidad.
+
+\vspace{4mm}
+\hrule
+\vspace{5mm}
+
+\subsection*{Ficha Bibliográfica N$^\circ$ 4: Identificación Multi-Modelo Basada en Procesos de Negocio}
+
+\noindent\textbf{Referencia Formato IEEE:}\\
+\nocite{Daoud2021}\cite{Daoud2021} M. Daoud, A. {El Mezouari}, N. Faci, D. Benslimane, Z. Maamar, and A. {El Fazziki}, ``A multi-model based microservices identification approach,'' \textit{Journal of Systems Architecture}, vol. 118, p. 102200, Sept. 2021.
+
+\vspace{1.5mm}
+\noindent\textbf{DOI Verificado:} \url{https://doi.org/10.1016/j.sysarc.2021.102200}\\
+\textbf{Indexación:} Journal of Systems Architecture, Elsevier (Scopus Q1).
+
+\vspace{2mm}
+\noindent\textbf{Resumen Técnico Contextualizado (102 palabras):}\\
+El trabajo plantea que la partición de sistemas monolíticos debe responder a los flujos organizacionales y no solo a la sintaxis del código fuente. Los autores formulan un método de identificación sustentado en modelos de procesos de negocio (BPMN) que extrae dependencias de control, intercambio de datos y proximidad semántica respaldada por ontologías OWL. Mediante un algoritmo de agrupamiento jerárquico aglomerativo colaborativo (cHAC), la metodología particiona las actividades empresariales en servicios autónomos. Los experimentos en el sistema de bicicletas compartidas Bicing evidenciaron una reducción notable del acoplamiento inter-servicios y un incremento en la cohesión relacional frente a técnicas de clustering tradicionales.
+
+\vspace{2mm}
+\noindent\textbf{Dato Concreto y Verificable:}\\
+\textbf{Sección 4.4, págs. 19--21 (Fig. 8, Fig. 9, Tabla 13):} En la evaluación experimental sobre el caso real \textit{Bicing}, la integración conjunta de dependencias de control, datos y semántica fragment-driven logró minimizar el acoplamiento aferente (AC) y eferente (EC) a valores cercanos a cero en módulos críticos como \textit{RequestHandling} (AC=1, EC=2, Cohesión Relacional RC=0.88), superando holgadamente a los esquemas basados únicamente en dependencias sintácticas.
+
+\vspace{2mm}
+\noindent\textbf{Nota Personal y Articulación con TA-IND-01:}\\
+La investigación me convenció de que al estructurar un sistema distribuido, las fronteras de los microservicios deben alinearse estrictamente con los procesos del negocio y los modelos ontológicos de dominio. En el informe \textbf{TA-IND-01}, aplicaré este artículo en la sección \textit{``Diseño Arquitectónico Guiado por Procesos de Negocio''}, justificando la modularización del sistema caso de estudio a partir del intercambio de artefactos de datos y la eliminación de dependencias circulares.
+
+\vspace{4mm}
+\hrule
+\vspace{5mm}
+
+\subsection*{Ficha Bibliográfica N$^\circ$ 5: Análisis de Compensaciones en Arquitecturas Distribuidas}
+
+\noindent\textbf{Referencia Formato IEEE:}\\
+\nocite{Ford2021}\cite{Ford2021} N. Ford, M. Richards, P. Sadalage, and Z. Dehghani, \textit{Software Architecture: The Hard Parts: Modern Trade-Off Analyses for Distributed Architectures}, 1st ed. Sebastopol, CA, USA: O'Reilly Media, 2021.
+
+\vspace{1.5mm}
+\noindent\textbf{ISBN Verificado:} \texttt{978-1-492-08689-5}\\
+\textbf{Editorial:} O'Reilly Media (Libro científico-técnico de referencia internacional).
+
+\vspace{2mm}
+\noindent\textbf{Resumen Técnico Contextualizado (100 palabras):}\\
+El libro examina los dilemas críticos que emergen al abandonar los monolitos en favor de arquitecturas distribuidas, demostrando que no existen soluciones universales sino compensaciones constantes (trade-offs). Los autores estructuran un marco analítico riguroso donde formalizan el concepto de quantum arquitectónico como la unidad mínima con capacidad de despliegue independiente, alta cohesión y acoplamiento dinámico síncrono. Asimismo, analizan los mecanismos para descomponer datos operacionales mediante impulsores de integración y desintegración, contrastando además la orquestación centralizada con la coreografía reactiva en sagas distribuidas, brindando criterios de decisión esenciales para balancear escalabilidad, consistencia y tolerancia a fallos.
+
+\vspace{2mm}
+\noindent\textbf{Dato Concreto y Verificable:}\\
+\textbf{Capítulo 2, pág. 29 (pág. 46 del documento):} Los autores definen formalmente el concepto de quantum arquitectónico: \textit{``An architecture quantum is an independently deployable artifact with high functional cohesion, high static coupling, and synchronous dynamic coupling''}. Asimismo, en el \textbf{Capítulo 6 (págs. 132--146)}, formalizan la taxonomía de fuerzas de datos distinguiendo los factores desintegradores (como escalabilidad independiente y ciclo de vida de transacciones) frente a los integradores (consistencia ACID e integridad relacional).
+
+\vspace{2mm}
+\noindent\textbf{Nota Personal y Articulación con TA-IND-01:}\\
+Esta obra me proporcionó una mentalidad crítica fundamental: en la ingeniería de software distribuida nunca existen ``mejores prácticas'' absolutas, sino únicamente compensaciones entre atributos de calidad. Entendí con precisión que si dos microservicios comparten una misma base de datos relacional, pertenecen fácticamente al mismo quantum arquitectónico y pierden su independencia de despliegue. En \textbf{TA-IND-01}, este libro será el pilar rector de la sección \textit{``Análisis Crítico de Compensaciones (Trade-Offs), Transacciones Distribuidas y Descomposición de Datos''}.
+
+\vspace{5mm}
+\hrule
+\vspace{6mm}
+
+\section*{2. Declaración de Uso de Inteligencia Artificial}
+En cumplimiento de las políticas académicas y éticas de la asignatura Aplicaciones Distribuidas, se declara de manera explícita el apoyo tecnológico empleado:
+
+\begin{itemize}
+    \item \textbf{Herramienta empleada:} Se utilizó el modelo \textit{Gemini (Google)}.
+    \item \textbf{Propósito del uso:} La herramienta se utilizó exclusivamente como apoyo para la corrección de estilo lingüístico, identificación de faltas ortográficas, ajuste de signos de puntuación (como comas y tildes) y revisión de la sintaxis del código fuente en LaTeX (\texttt{main.tex}).
+    \item \textbf{Verificación y autoría humana:} La totalidad de las fuentes bibliográficas analizadas provienen de los archivos PDF locales provistos en la carpeta individual (\texttt{Referencias PDF/}). No se extrajo información de internet ni de páginas web sin autoría. Cada DOI, ISBN, volumen, páginas, dato concreto y concepto técnico fue cotejado y contrastado manualmente de forma directa contra los documentos originales.
+    \item \textbf{Redacción original:} La redacción de los resúmenes técnicos contextualizados, el análisis metodológico y las notas personales de articulación con el informe \textbf{TA-IND-01} son de autoría auténtica y exclusiva del estudiante responsable.
+\end{itemize}
+
+\vspace{5mm}
+\hrule
+\newpage
+
+\section*{3. Referencias Bibliográficas (Estándar IEEE)}
+Las siguientes referencias fueron generadas mediante \texttt{biblatex} con el estilo formal \texttt{ieee} a partir del archivo \texttt{Referencias.bib}:
+
+\printbibliography[heading=none]
+
+\end{document}
