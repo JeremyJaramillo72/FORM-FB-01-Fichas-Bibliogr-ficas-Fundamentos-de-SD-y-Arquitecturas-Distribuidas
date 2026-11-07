@@ -1,9 +1,14 @@
-# FICHA BIBLIOGRÁFICA: FORM-FB-01
-## Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas
+# FORM-FB-01 — Fichas Bibliográficas: Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas
+
+[![Asignatura](https://img.shields.io/badge/Asignatura-Aplicaciones%20Distribuidas%20(SOF--I--R)-000000.svg)](#)
+[![Nivel](https://img.shields.io/badge/Nivel-7mo%20Nivel%20--%20Paralelo%20A-000000.svg)](#)
+[![Modalidad](https://img.shields.io/badge/Modalidad-Individual%20--%20Formativa-000000.svg)](#)
+[![Compilador](https://img.shields.io/badge/LaTeX-pdflatex%20%2B%20biber-000000.svg)](#)
 
 ---
 
-### 📌 Datos Informativos
+## 📌 1. Datos Informativos
+
 - **Institución:** Universidad Técnica Estatal de Quevedo (UTEQ)
 - **Facultad:** Facultad de Ciencias de la Computación / Ciencias de la Ingeniería
 - **Carrera:** Ingeniería de Software
@@ -11,64 +16,130 @@
 - **Nivel / Paralelo:** 7mo Nivel — Paralelo "A"
 - **Docente:** Dr. Gleiston Cicerón Guerrero Ulloa
 - **Estudiante Responsable:** Heiner Ariel Zambrano Ronquillo
-- **C.I.:** 0957140346
+- **Cédula de Identidad:** 0957140346
 - **Correo Institucional:** `hzambranor@uteq.edu.ec`
 - **Código de Actividad:** FORM-FB-01
+- **Período Académico:** Semana 2 (2 al 8 de noviembre de 2026)
+- **Repositorio Oficial:** [Repositorio GitHub Grupal](https://github.com/JeremyJaramillo72/FORM-FB-01-Fichas-Bibliogr-ficas-Fundamentos-de-SD-y-Arquitecturas-Distribuidas)
 
 ---
 
-### 📖 Referencia Principal Analizada
+## 🎯 2. Propósito y Alcance de la Actividad
 
-#### Formato IEEE:
-> P. Haindl, P. Kochberger, and M. Sveggen, "A Systematic Literature Review of Inter-Service Security Threats and Mitigation Strategies in Microservice Architectures," *IEEE Access*, vol. 12, pp. 83820–83856, 2024, doi: [10.1109/ACCESS.2024.3406500](https://doi.org/10.1109/ACCESS.2024.3406500).
+Esta actividad formativa individual prepara al estudiante para redactar el **Informe Académico Individual TA-IND-01** (*Análisis crítico de un sistema distribuido real*), correspondiente a la Semana 3. 
 
-#### Formato APA (7.ª edición):
-> Haindl, P., Kochberger, P., & Sveggen, M. (2024). A Systematic Literature Review of Inter-Service Security Threats and Mitigation Strategies in Microservice Architectures. *IEEE Access*, 12, 83820–83856. https://doi.org/10.1109/ACCESS.2024.3406500
+El presente compendio sistematiza cinco fuentes científicas primarias de alto impacto (publicadas entre 2021 y 2024 en revistas internacionales indexadas en Scopus Q1 y Web of Science). Cada ficha bibliográfica incluye:
+1. Referencia formal en formato IEEE generada con `biblatex` a partir de un archivo `.bib`.
+2. Identificador persistente verificado (DOI).
+3. Resumen analítico de aproximadamente 100 palabras redactado de forma crítica y contextualizada a la fuente.
+4. Dato empírico concreto (cifras, taxonomías o conclusiones) con su ubicación exacta (sección y página) y un análisis detallado de su implicación técnica.
+5. Nota personal que fundamenta el aporte de la fuente y la sección específica del informe TA-IND-01 donde será utilizada.
 
 ---
 
-### 📂 Estructura de esta Carpeta
+## 📚 3. Fuentes Académicas Analizadas y Verificadas (5 Artículos Indexados)
+
+| N° | Autores | Título del Artículo | Revista / Editorial | Cuartil / Indexación | Año | DOI Verificado |
+|:--:|:--------|:--------------------|:--------------------|:--------------------:|:---:|:--------------:|
+| **1** | P. Haindl, P. Kochberger, M. Sveggen | *A Systematic Literature Review of Inter-Service Security Threats and Mitigation Strategies in Microservice Architectures* | *IEEE Access* (IEEE) | Q1 Scopus / WoS | 2024 | [10.1109/ACCESS.2024.3406500](https://doi.org/10.1109/ACCESS.2024.3406500) |
+| **2** | J. Soldani, A. Brogi | *Anomaly Detection and Failure Root Cause Analysis in (Micro) Service-Based Cloud Applications: A Survey* | *ACM Computing Surveys* (ACM) | Q1 Scopus / WoS | 2022 | [10.1145/3501297](https://doi.org/10.1145/3501297) |
+| **3** | A. Pereira-Vale, E. B. Fernandez, R. Monge, H. Astudillo, G. Márquez | *Security in microservice-based systems: A Multivocal literature review* | *Computers & Security* (Elsevier) | Q1 Scopus / WoS | 2021 | [10.1016/j.cose.2021.102200](https://doi.org/10.1016/j.cose.2021.102200) |
+| **4** | S. Li, H. Zhang, Z. Jia, C. Zhong, C. Zhang, Z. Shan, J. Shen, M. A. Babar | *Understanding and addressing quality attributes of microservices architecture: A Systematic literature review* | *Information and Software Technology* (Elsevier) | Q1 Scopus / WoS | 2021 | [10.1016/j.infsof.2020.106449](https://doi.org/10.1016/j.infsof.2020.106449) |
+| **5** | M. Sildatke, H. Karwanni, B. Kraft, A. Zündorf | *A Distributed Microservice Architecture Pattern for the Automated Generation of Information Extraction Pipelines* | *SN Computer Science* (Springer Nature) | Indexada / WoS | 2023 | [10.1007/s42979-023-02256-4](https://doi.org/10.1007/s42979-023-02256-4) |
+
+---
+
+## 🛠️ 4. Instrucciones de Compilación (Requisitos de la Tarea)
+
+De acuerdo con las instrucciones de la actividad académica, a continuación se detallan de forma explícita el **compilador**, el **archivo principal**, el **orden de comandos** y las **dependencias** requeridas para la compilación reproducible del documento:
+
+### 4.1. Compilador
+- **Compilador Principal:** `pdflatex` (pdfTeX versión 3.141592653 o superior).
+- **Motor Bibliográfico:** `biber` (versión 2.19 o superior compatible con el paquete `biblatex`).
+- **Distribución LaTeX Soportada:** MiKTeX (versión 24.x o superior) o TeX Live (2023 o superior) en sistemas Windows, Linux y macOS.
+
+### 4.2. Archivo Principal
+- **Documento Principal (5 fichas completas, 7 páginas):** `main.tex` (genera `main.pdf`).
+  *(Alias con nomenclatura formal del estudiante:* `FORM-FB-01_Zambrano_Heiner.tex` $\rightarrow$ `FORM-FB-01_Zambrano_Heiner.pdf`*).*
+- **Base de Datos Bibliográfica:** `referencias.bib` (archivo unificado en estándar BibLaTeX / IEEE con 5 entradas verificadas).
+- **Documento Adicional para Entrega en LMS / SGA (1 sola página):** `sga.tex` (genera `sga.pdf`).
+  *(Alias formal:* `FORM-FB-01_SGA_Zambrano_Heiner.tex` $\rightarrow$ `FORM-FB-01_SGA_Zambrano_Heiner.pdf`*).*
+
+### 4.3. Orden de Comandos
+Para compilar el documento principal resolviendo correctamente las citas en formato IEEE, la base bibliográfica, los enlaces y las referencias cruzadas, ejecute la siguiente secuencia estricta de 4 comandos en la terminal:
+
+```bash
+# Paso 1: Primera pasada para registrar citas y generar archivos auxiliares (.aux, .bcf)
+pdflatex -interaction=nonstopmode main.tex
+
+# Paso 2: Ejecución del motor Biber para procesar el archivo de bibliografía (referencias.bib)
+biber main
+
+# Paso 3: Segunda pasada para incorporar las referencias formateadas en estándar IEEE
+pdflatex -interaction=nonstopmode main.tex
+
+# Paso 4: Tercera pasada para resolver numeración definitiva, hipervínculos y total de páginas
+pdflatex -interaction=nonstopmode main.tex
+```
+
+> **Compilación del documento de entrega en SGA (`sga.tex` de 1 página):**  
+> Dado que este documento no utiliza bibliografía externa, se compila directamente en un solo paso:
+> ```bash
+> pdflatex -interaction=nonstopmode sga.tex
+> ```
+
+### 4.4. Dependencias (Paquetes LaTeX Requeridos)
+El documento hace uso exclusivo de paquetes estándar incluidos en cualquier instalación completa de MiKTeX o TeX Live:
+- `babel` (con opciones `spanish, es-tabla`): localización tipográfica y textos predefinidos en español.
+- `inputenc` (con codificación `utf8`): soporte integral para caracteres latinos, tildes y eñes.
+- `geometry`: configuración geométrica de márgenes (2.0 cm superior/inferior, 2.0 cm izquierdo/derecho).
+- `microtype`: optimización microtipográfica de justificación y reducción de cortes de palabra.
+- `booktabs`: formateo profesional de líneas horizontales para tablas académicas (`\toprule`, `\midrule`, `\bottomrule`).
+- `tabularx`: tablas con cálculo responsivo de ancho de columna.
+- `enumitem`: listas numeradas y de viñetas con espaciado compacto y alineación controlada.
+- `csquotes`: manejo avanzado de entrecomillado tipográfico según estándares de citas.
+- `biblatex` (con opciones `backend=biber`, `style=ieee`, `sorting=none`): generación automatizada de citas y bibliografía en norma IEEE.
+- `hyperref` (con opción `hidelinks`): enlaces clicables limpios para DOIs y referencias sin alterar la estética académica en blanco y negro.
+- `titlesec`: formateo compacto y uniforme de encabezados de secciones y subsecciones.
+
+---
+
+## 📂 5. Estructura de Archivos de esta Carpeta
 
 ```text
 FORM-FB-01- Zambrano Ronquillo Heiner/
 │
-├── README.md                                          # Ficha bibliográfica detallada del estudiante
-├── Referencia (PDF)/                                 # Documento de investigación en formato PDF
-│   └── A_Systematic_Literature_Review_of_Inter-Service_Se.pdf
+├── README.md                                          # Documentación técnica y guía de compilación
+├── main.tex                                           # Código fuente LaTeX principal (5 fichas, resumen, dato concreto, IEEE)
+├── main.pdf                                           # PDF compilado final del informe completo (7 páginas)
+├── sga.tex                                            # Código fuente LaTeX para entrega en SGA (1 sola página)
+├── sga.pdf                                            # Documento PDF compilado para subir al SGA (1 sola página)
+├── referencias.bib                                    # Base de datos BibTeX unificada y verificada (claves IEEE)
 │
-└── Referencias (.bib)/                                # Cita estructurada en formato BibTeX
-    └── Haindl2024MicroserviceSecurity.bib
+├── FORM-FB-01_Zambrano_Heiner.tex                     # Archivo con nomenclatura formal de la actividad
+├── FORM-FB-01_Zambrano_Heiner.pdf                     # PDF con nomenclatura formal
+├── FORM-FB-01_SGA_Zambrano_Heiner.tex                 # Archivo SGA con nomenclatura formal
+├── FORM-FB-01_SGA_Zambrano_Heiner.pdf                 # PDF SGA con nomenclatura formal
+│
+├── Referencia (PDF)/                                  # Documentos primarios científicos originales en formato PDF
+│   ├── A Distributed Microservice Architecture Pattern for the Automated Generation of Information Extraction Pipelines.pdf
+│   ├── A_Systematic_Literature_Review_of_Inter-Service_Se.pdf
+│   ├── Anomaly Detection and Failure Root Cause Analysis in(Micro) Service-Based Cloud Applications A Survey.pdf
+│   ├── Security in microservice-based systems A Multivocal literature review.pdf
+│   └── Understanding and addressing quality attributes of microservices architecture A Systematic literature review.pdf
+│
+└── Referencias (.bib)/                                # Citas BibTeX individuales descargadas de las editoriales
+    ├── A Distributed Microservice Architecture Pattern for the Automated Generation of Information Extraction Pipelines.bib
+    ├── Anomaly Detection and Failure Root Cause Analysis in(Micro) Service-Based Cloud Applications A Survey.bib
+    ├── Haindl2024MicroserviceSecurity.bib
+    ├── Security in microservice-based systems A Multivocal literature review.bib
+    └── Understanding and addressing quality attributes of microservices architecture A Systematic literature review.bib
 ```
 
 ---
 
-### 📑 Contenido de la Ficha Bibliográfica
+## 🤖 6. Declaración de Uso Ético de Inteligencia Artificial
 
-#### 1. Resumen Ejecutivo
-Esta revisión sistemática de la literatura (SLR), desarrollada conforme a las directrices PRISMA 2020 y Kitchenham & Charters, analiza 54 estudios científicos publicados entre 2015 y 2023 sobre las amenazas de seguridad y estrategias de mitigación en la comunicación inter-servicios (*inter-service security*) de arquitecturas de microservicios (MSA). El estudio clasifica las amenazas en áreas críticas como el perímetro de seguridad difuso, expansión de superficie de ataque, confianza ciega entre servicios (*Confused Deputy Problem*), y vulnerabilidades en contenedores y herramientas de orquestación (Docker, Kubernetes). Asimismo, sintetiza las estrategias de mitigación líderes: DevSecOps, mTLS, Service Mesh (Istio, Linkerd), API Gateway, y principios Zero Trust.
-
-#### 2. Palabras Clave
-- *Microservices Architecture* (Arquitectura de Microservicios)
-- *Inter-Service Security* (Seguridad entre Servicios)
-- *Security Threats* (Amenazas de Seguridad)
-- *Mitigation Strategies* (Estrategias de Mitigación)
-- *Service Mesh & Sidecar* (Malla de Servicios y Patrón Sidecar)
-- *Zero-Trust Model* (Modelo de Cero Confianza)
-
-#### 3. Amenazas Clave en la Comunicación Inter-Servicios
-1. **Expansión de la Superficie de Ataque:** La descentralización de servicios conectados a través de la red amplía exponencialmente los puertos y APIs expuestas.
-2. **Confianza Implícita en la Red (*Pivoting*):** Asumir que el tráfico interno de la red es seguro permite que la vulneración de un solo microservicio otorgue al atacante acceso y control lateral sobre todo el ecosistema.
-3. **Vulnerabilidades en Contenedores e Imágenes Base:** Uso de imágenes con configuraciones por defecto o bibliotecas desactualizadas compartidas en entornos homogéneos.
-4. **Falta de Trazabilidad y Detección de Intrusos:** Dificultad para rastrear peticiones distribuidas a través de múltiples saltos de red.
-
-#### 4. Estrategias de Mitigación y Patrones Arquitectónicos
-- **Mutual TLS (mTLS):** Encriptación bidireccional y autenticación criptográfica obligatoria entre microservicios.
-- **Service Mesh & Patrón Sidecar:** Delegación de la seguridad de red, balanceo y observabilidad a proxies ligeros sin tocar el código de negocio de cada servicio.
-- **API Gateway:** Centralización de autenticación perimetral, limitación de tasa (*rate limiting*) y terminación SSL.
-- **Principio de Mínimo Privilegio y Cero Confianza (Zero Trust):** Verificación continua de identidad y permisos para cada transacción, independientemente de su origen.
-
-#### 5. Relevancia para los Fundamentos de Sistemas Distribuidos
-El estudio fundamenta que la seguridad en sistemas distribuidos no puede tratarse con los enfoques perimetrales de los sistemas monolíticos tradicionales. En arquitecturas distribuidas, cada nodo debe asumir que la red subyacente es hostil y aplicar autenticación y autorización granular a nivel de servicio.
-
-#### 6. Conclusión y Valoración Crítica
-La investigación de Haindl et al. resalta una necesidad imperiosa: la estandarización de una taxonomía de seguridad y la adopción de arquitecturas Zero Trust en los sistemas distribuidos modernos. Para ingenieros de software, el artículo es una guía indispensable para seleccionar patrones y herramientas (como Istio o Envoy) que mitiguen de forma práctica las vulnerabilidades inherentes a la comunicación distribuida.
+- **Herramienta Empleada:** Asistente de inteligencia artificial generativa basado en modelos de lenguaje extenso (LLM).
+- **Propósito:** Asistencia técnica auxiliar para la depuración sintáctica del código LaTeX y la estructuración del flujo de compilación con Biber.
+- **Verificación Humana y Autoría Intelectual:** Todos los documentos fueron leídos y contrastados directamente a partir de los archivos PDF provistos. Cada DOI fue validado de forma manual en las bases de datos de IEEE Xplore, ACM Digital Library y ScienceDirect, comprobando la veracidad de los autores, títulos, revistas, volúmenes y páginas. Los resúmenes analíticos (~100 palabras), la explicación contextualizada de los datos concretos y las notas de aplicación para TA-IND-01 fueron redactados de forma individual por el estudiante Heiner Ariel Zambrano Ronquillo.
