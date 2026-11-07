@@ -1,0 +1,141 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+% Configuración BibLaTeX en formato IEEE
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{referencias.bib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\title{\textbf{FORM-FB-01: Fichas Bibliográficas}\\ \large Fundamentos de Sistemas Distribuidos y Arquitecturas Distribuidas}
+\author{Luis Jeremy Jaramillo Acosta}
+\date{Semana 2 -- Noviembre 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Declaración de Uso de Inteligencia Artificial}
+En cumplimiento con las directrices académicas y de integridad de la asignatura, el autor declara que utilizó la herramienta de inteligencia artificial \textbf{Gemini (Google)} con el único propósito de realizar una \textbf{revisión ortográfica, de acentuación (tildes) y de puntuación} sobre los borradores previamente redactados.
+
+Se deja constancia explícita de que la herramienta no fue utilizada para generar resúmenes, redactar notas analíticas, alterar la estructura sintáctica ni modificar las ideas originales. El método de verificación consistió en un cotejo manual exhaustivo de cada corrección sugerida antes de su inclusión, garantizando que el contenido técnico, la interpretación conceptual y la autoría intelectual del documento corresponden en su totalidad al estudiante.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.4cm}
+
+\section*{Fichas Bibliográficas}
+
+% FICHA 1
+\begin{tcolorbox}[colback=white,colframe=black!75!black,title=\textbf{Ficha Bibliográfica 1: Artículo Indexado (IEEE Access)}]
+\textbf{Referencia IEEE:} \cite{ref1_monolithic} \\
+\textbf{DOI:} \href{https://doi.org/10.1109/ACCESS.2022.3152803}{10.1109/ACCESS.2022.3152803}
+
+\vspace{0.2cm}
+\textbf{Resumen (102 palabras):} \\
+El artículo analiza directamente si conviene migrar arquitecturas monolíticas hacia microservicios y cómo esto afecta el rendimiento y la escalabilidad en sistemas fuera de la hiperescala. Los autores implementaron una aplicación de referencia en cuatro versiones, combinando ambos estilos con dos tecnologías: Java Spring Boot y ASP.NET Core. Evaluaron el rendimiento con Apache JMeter bajo entornos local, Azure Spring Cloud y Azure App Service. Los resultados revelan que en una sola máquina el monolito supera a los microservicios al no sufrir la sobrecarga de red interservicio. Asimismo, el escalamiento vertical resultó más costo-eficiente que el horizontal, el cual degrada el rendimiento si se sobreescalan instancias de cómputo.
+
+\vspace{0.2cm}
+\textbf{Dato concreto:} \\
+En la Sección V-A (Resultados en Entorno Local, p. 20365), los autores comprobaron que en el servicio ligero \textit{City}, el monolito procesó en promedio más del doble de solicitudes por segundo en la implementación .NET ($>2\times$) y $1.37\times$ más en Java respecto a la versión en microservicios, debido al costo del paso de mensajes interproceso y serialización JSON a través del API Gateway. Además, en la Sección VI-B (p. 20370), se formaliza el límite de sobreescalamiento (\textit{over-scaling}), donde la sobrecarga de distribución de tráfico anula la ganancia de agregar instancias virtuales adicionales.
+
+\vspace{0.2cm}
+\textbf{Nota personal (Aporte a la comprensión y uso en TA-IND-01):} \\
+Esta investigación me permitió comprender que desacoplar un sistema introduce costos de latencia y serialización que solo se amortizan ante cargas masivas. En el informe TA-IND-01 emplearé esta fuente en la \textbf{Sección 5 (Modelos de comunicación)}, para justificar el costo del transporte de mensajes frente a llamadas locales, y en la \textbf{Sección 9 (Postura crítica)}, como sustento cuantitativo para argumentar los compromisos de diseño (\textit{trade-offs}) y definir en qué escenarios de tráfico moderado un sistema distribuido resulta contraproducente.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% FICHA 2
+\begin{tcolorbox}[colback=white,colframe=black!75!black,title=\textbf{Ficha Bibliográfica 2: Artículo Indexado (Journal of Systems and Software)}]
+\textbf{Referencia IEEE:} \cite{ref2_waseem2020sms} \\
+\textbf{DOI:} \href{https://doi.org/10.1016/j.jss.2020.110798}{10.1016/j.jss.2020.110798}
+
+\vspace{0.2cm}
+\textbf{Resumen (100 palabras):} \\
+El artículo aborda la falta de revisiones integrales sobre la adopción de microservicios en entornos DevOps. Para esto, los autores implementaron un estudio de mapeo sistemático (SMS) analizando 47 publicaciones primarias entre 2009 y 2018 mediante análisis temático y evaluación cualitativa. Los hallazgos se estructuran en tres dimensiones: desarrollo y operaciones, herramientas de soporte y experiencias de migración. En el trabajo se clasificaron un total de 24 problemas con soluciones prácticas, se compilaron 50 herramientas de automatización y se demostró que los microservicios potencian la escalabilidad y desplegabilidad, aunque introducen desafíos críticos en seguridad en tiempo de ejecución, observabilidad distribuida y degradación en cascada de servicios.
+
+\vspace{0.2cm}
+\textbf{Dato concreto:} \\
+En la Sección 5.1.5 (MSA Design Patterns, p. 32), los autores señalan que \textit{Circuit Breaker} es el patrón arquitectónico que más se documentó en la literatura (reportado en 5 estudios, representando el 10.63\% de los patrones analizados), lo que evidencia directamente que mitigar el fallo en cascada por interdependencia de red representa la principal prioridad operativa en sistemas desacoplados.
+
+\vspace{0.2cm}
+\textbf{Nota personal (Aporte a la comprensión y uso en TA-IND-01):} \\
+El texto evidencia que la resiliencia en arquitecturas distribuidas no se logra únicamente separando servicios, sino implementando mecanismos activos de aislamiento de fallos y telemetría. En el informe TA-IND-01 me ayudará esta fuente en la \textbf{Sección 5 (Tolerancia a fallos)}, para justificar el uso de patrones de corte de circuito frente a fallas parciales, y en la \textbf{Sección 9 (Postura crítica)}, para fundamentar la sobrecarga operacional que impone la observabilidad distribuida (trazas, registros y métricas) en entornos de alta concurrencia.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% FICHA 3
+\begin{tcolorbox}[colback=white,colframe=black!75!black,title=\textbf{Ficha Bibliográfica 3: Artículo Indexado (Information and Software Technology)}]
+\textbf{Referencia IEEE:} \cite{ref3_towards_migration_framework} \\
+\textbf{DOI:} \href{https://doi.org/10.1016/j.infsof.2021.106600}{10.1016/j.infsof.2021.106600}
+
+\vspace{0.2cm}
+\textbf{Resumen (99 palabras):} \\
+El artículo aborda la problemática de migrar sistemas monolíticos a microservicios basándose en intuiciones subjetivas en lugar de evidencias empíricas. Los autores estructuraron un marco de evaluación cuantitativo para respaldar la toma de decisiones arquitectónicas, fundamentado en Teoría Fundamentada (\textit{Grounded Theory}) mediante entrevistas semiestructuradas a un total de 52 profesionales de la industria. El método categoriza métricas bajo el estándar ISO/IEC 25010 más dimensiones de costo y procesos. Los hallazgos revelan que la mantenibilidad, desplegabilidad y autonomía organizacional motivan la migración; sin embargo, descomponer aplicaciones sin evaluar previamente la complejidad del acoplamiento estructural y los costos operacionales incrementa la deuda técnica del sistema.
+
+\vspace{0.2cm}
+\textbf{Dato concreto:} \\
+En la Sección 4.6.1 (Migration Motivations, pp. 14--15), el estudio analiza un total de 97 motivaciones reportadas por los profesionales, identificando que la mantenibilidad (19/97), la desplegabilidad (12/97) y la organización de equipos (11/97) impulsan la transición, superando ampliamente a factores técnicos como la tolerancia a fallos (5/97) o la escalabilidad (5/97). De igual manera, en la p. 17 se constata que el 65\% de los ingenieros encuestados reconoce que omitir estas métricas antes de reescribir el monolito genera sobrecostos imprevistos de infraestructura.
+
+\vspace{0.2cm}
+\textbf{Nota personal (Aporte a la comprensión y uso en TA-IND-01):} \\
+Esta fuente me permitió entender que la distribución de un sistema no debe responder a modas tecnológicas, sino a métricas objetivas de cohesión y límites de servicio. En el informe TA-IND-01 emplearé este estudio en la \textbf{Sección 4 (Arquitectura del sistema)}, para justificar por qué los componentes distribuidos requieren fronteras funcionales explícitas, y en la \textbf{Sección 9 (Postura crítica)}, como argumento metodológico para definir las condiciones bajo las cuales mantener un monolito modular resulta más costo-eficiente que adoptar un sistema distribuido.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% FICHA 4
+\begin{tcolorbox}[colback=white,colframe=black!75!black,title=\textbf{Ficha Bibliográfica 4: Libro Canónico (O'Reilly Media)}]
+\textbf{Referencia IEEE:} \cite{ref4_building_microservices} \\
+\textbf{ISBN:} 978-1492034025
+
+\vspace{0.2cm}
+\textbf{Resumen (101 palabras):} \\
+El libro trata sobre la complejidad de diseñar, descomponer y operar sistemas basados en microservicios sin caer en acoplamientos destructivos. Con un enfoque práctico basado en casos reales de la industria y diseño guiado por el dominio, el autor analiza patrones de integración, manejo de datos distribuidos y resiliencia operativa. La obra concluye que el principio clave e insustituible es la desplegabilidad independiente de cada servicio; si un cambio funcional obliga a desplegar varios servicios al mismo tiempo y de forma coordinada, la arquitectura degenera en un monolito distribuido, sumando problemas de latencia y red sin otorgar ninguna ventaja real de autonomía operacional.
+
+\vspace{0.2cm}
+\textbf{Dato concreto:} \\
+En el Capítulo 1 (What Are Microservices?, p. 4), el autor formaliza la regla de oro arquitectónica: un microservicio se define estrictamente por su desplegabilidad independiente; si un cambio en un servicio existente exige coordinar el despliegue con otros consumidores o proveedores, se destruye la cohesión y el sistema colapsa operativamente en un monolito distribuido con sobrecarga de red.
+
+\vspace{0.2cm}
+\textbf{Nota personal (Aporte a la comprensión y uso en TA-IND-01):} \\
+Nos muestra los límites entre modularidad desacoplada y fragmentación excesiva, demostrando que la partición física de servicios debe respaldar fronteras de negocio estables. En el informe TA-IND-01 emplearé este texto en la \textbf{Sección 4 (Arquitectura del sistema)}, para validar la descomposición de componentes y el modelado de interfaces, y en la \textbf{Sección 5 (Tolerancia a fallos)}, como marco conceptual para fundamentar el uso de patrones de resiliencia como \textit{Circuit Breaker} y aislamiento de recursos frente a fallos parciales.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+% FICHA 5
+\begin{tcolorbox}[colback=white,colframe=black!75!black,title=\textbf{Ficha Bibliográfica 5: Libro Canónico Académico}]
+\textbf{Referencia IEEE:} \cite{ref5_distributed_systems_4} \\
+\textbf{ISBN:} 978-9081540636
+
+\vspace{0.2cm}
+\textbf{Resumen (98 palabras):} \\
+Este libro profundiza en los fundamentos teóricos y principios arquitectónicos de los sistemas distribuidos contemporáneos. Mediante un análisis riguroso de modelos computacionales, comunicación entre procesos mediante RPC y colas de mensajes, los autores examinan sincronización de relojes lógicos, algoritmos de consenso y protocolos de replicación de datos. La obra concluye que la transparencia absoluta es inalcanzable en redes asíncronas no confiables; en consecuencia, los arquitectos de software deben diseñar sistemas orientados a convivir con fallos parciales, balanceando de manera formal las compensaciones del Teorema CAP entre disponibilidad y consistencia en presencia de particiones de red.
+
+\vspace{0.2cm}
+\textbf{Dato concreto:} \\
+En el Capítulo 8 (Fault Tolerance, p. 412), los autores demuestran analíticamente que un sistema distribuido que esté operando bajo un modelo de fallas bizantinas requiere un mínimo de $3k + 1$ nodos réplica para tolerar el comportamiento anómalo o malicioso de $k$ nodos participantes y alcanzar consenso determinista.
+
+\vspace{0.2cm}
+\textbf{Nota personal (Aporte a la comprensión y uso en TA-IND-01):} \\
+El texto proporciona la base matemática y conceptual sobre las transparencias de distribución y la replicación tolerante a fallos. En el informe TA-IND-01 emplearé esta fuente en la \textbf{Sección 5 (Análisis de transparencias y Teorema CAP/PACELC)}, para clasificar el modelo de consistencia del sistema distribuido real analizado, y en la \textbf{Sección 8 (Análisis comparativo)}, como marco formal para evaluar las garantías de partición y consenso frente al sistema homólogo seleccionado.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+\printbibliography[title={Referencias Bibliográficas (Formato IEEE)}]
+
+\end{document}
